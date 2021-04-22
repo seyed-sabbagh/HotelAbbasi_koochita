@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">HotelAbbasi</string>
+    <string name="moarefi_koli">معرفی کلی</string>
+    <string name="naghshe">نقشه</string>
+    <string name="nazarat">نظرات</string>
+    <string name="porsesh_pasokh">پرسش و پاسخ</string>
+    <string name="makan_haye_moshabeh">مکان های مشابه</string>
+    <string name="hotel_abbasi">هتل عباسی</string>
+    <string name="emtiyaz_karbaran">امنیاز کاربران</string>
+    <string name="adres">آدرس:ابتدای خیابان آمادگاه</string>
+    <string name="_300_5">قدیمی‌ترین هتل دنیا هتل عباسی در اصفهان قرار داره و یکی از زیباترین هتل‌های اصفهان و ایران محسوب میشه. این هتل قبلا یک مهمانسرای پر رفت و آمد در دوره صفوی بوده. فقط کافیه یک نگاه به نقاشی‌های این هتل-موزه زیبا بندازید تا اوج هنر فوق‌العاده ایرانی صفوی و قاجار رو روی در و دیوارهای این بنای 300 ساله ببینید. درسته که این هتل خیلی قدیمیه ولی یه هتل 5 ستاره‌ست. اگه میخواید حس و حال شاهزاده‌های ایرانی رو داشته باشید، بهتره در این هتل اصیل و در عین حال با امکانات خاص اقامت داشته باشید.</string>
+    <string name="ghaza_hotel">غذای هتل</string>
+    <string name="ghaza_irani">غذای ایرانی</string>
+    <string name="ghaza_faranghi">غذای فرنگی</string>
+    <string name="mahdode_gharar_giri">محدوده قرارگیری</string>
+    <string name="dakhel_shahr">داخل شهر</string>
+    <string name="memari">معماری</string>
+    <string name="sonati">سنتی</string>
+    <string name="emkanat_ghazai">امکانات غذایی هتل</string>
+    <string name="sobhane_rayeghan">صبحانه رایگان</string>
+    <string name="emkanat_hotel">امکانات هتل</string>
+    <string name="parking">پارکینگ</string>
+    <string name="bashghah">باشگاه</string>
+    <string name="estakhr">استخر</string>
+    <string name="internet_labi">اینترنت لابی</string>
+    <string name="resturan">رستوران</string>
+    <string name="kafi_shap">کافی شاپ</string>
+    <string name="noe_otagh">نوع اتاق</string>
+</resources>
