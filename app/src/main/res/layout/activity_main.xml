@@ -51,14 +51,14 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp" />
-
+-->
         <include
             layout="@layout/emtiyaz_karbar_mainactivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp" />
--->
+
 
      <ImageView
          android:layout_width="match_parent"

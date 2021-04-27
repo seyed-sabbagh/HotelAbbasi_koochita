@@ -42,4 +42,9 @@ dependencies {
     //Slider
     implementation 'com.github.denzcoskun:ImageSlideshow:0.0.6'
 
+
+
+    //TextView
+    implementation 'com.github.thomhurst:ExpandableHintText:1.0.7'
+
 }
