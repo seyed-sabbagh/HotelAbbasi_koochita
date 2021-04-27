@@ -73,15 +73,14 @@
     <com.tomlonghurst.expandablehinttext.ExpandableHintText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="First Name"
-        android:text="Tom"
-        android:textColor="@color/design_default_color_primary"
-        app:floatingLabelColor="@android:color/white"
-        app:image="@drawable/ic_baseline_sentiment_very_satisfied_24px"
+        android:hint="شما چه سوالی دارید"
+        android:textColor="@color/white"
+        app:floatingLabelColor="@android:color/darker_gray"
+        app:image="@drawable/ic_baseline_drafts_24"
         app:imageColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viesws"
-        app:textBoxColor="@android:color/white" />
+        app:textBoxColor="@android:color/darker_gray" />
     
 </androidx.constraintlayout.widget.ConstraintLayout>

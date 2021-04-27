@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
-<!--
+
 
         <include
             android:id="@+id/include2"
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp" />
--->
+
         <include
             layout="@layout/emtiyaz_karbar_mainactivity"
             android:layout_width="match_parent"
@@ -60,20 +60,27 @@
             android:layout_margin="10dp" />
 
 
-     <ImageView
-         android:layout_width="match_parent"
-         android:layout_height="wrap_content"
-         android:scaleType="centerCrop"
-         android:src="@drawable/map_pic"/>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/map_pic" />
 
         <include
-            android:layout_marginTop="20dp"
             layout="@layout/nazar_shoma_mainactivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            />
-        
+            android:layout_marginTop="20dp" />
+
+
+        <include
+            layout="@layout/porsesh_va_pasokh_mainactivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
 
     </LinearLayout>
 </ScrollView>
