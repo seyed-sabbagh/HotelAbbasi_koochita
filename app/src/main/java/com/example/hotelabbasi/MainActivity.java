@@ -19,12 +19,10 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
         ImageSlider imageSlider = findViewById(R.id.image_slider);
@@ -38,6 +36,47 @@ public class MainActivity extends AppCompatActivity {
 
         imageSlider.startSliding(3000);
         imageSlider.setImageList(slideModels, false);
+
+
+        ViewPager2 JazebeViewPager = findViewById(R.id.locationsviewPager2);
+
+        List<SliderModelJazebe> sliderModelJazebes = new ArrayList<>();
+
+
+        SliderModelJazebe sliderModelJazebe = new SliderModelJazebe();
+        sliderModelJazebe.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
+        sliderModelJazebe.title = "مدرسه چهارباغ";
+        sliderModelJazebe.location = "اصفهان اصفهان";
+        sliderModelJazebe.starRating = 4.5f;
+        sliderModelJazebes.add(sliderModelJazebe);
+
+        SliderModelJazebe sliderModelJazebe2 = new SliderModelJazebe();
+        sliderModelJazebe2.imageUrl = "https://static.koochita.com/_images/amaken/honar_bazar/f-1.jpg";
+        sliderModelJazebe2.title = "بازار هنر";
+        sliderModelJazebe2.location = "اصفهان اصفهان";
+        sliderModelJazebe2.starRating = 4.5f;
+        sliderModelJazebes.add(sliderModelJazebe2);
+
+        SliderModelJazebe sliderModelJazebe3 = new SliderModelJazebe();
+        sliderModelJazebe3.imageUrl = "https://static.koochita.com/_images/amaken/chehelsotun/f-1.jpg";
+        sliderModelJazebe3.title = "کاخ چهل ستون";
+        sliderModelJazebe3.location = "اصفهان اصفهان";
+        sliderModelJazebe3.starRating = 4.5f;
+        sliderModelJazebes.add(sliderModelJazebe3);
+
+        JazebeViewPager.setAdapter(new SliderJazebeAdapter(sliderModelJazebes));
+
+
+        JazebeViewPager.setClipToPadding(false);
+        JazebeViewPager.setClipChildren(false);
+        JazebeViewPager.setOffscreenPageLimit(3);
+        JazebeViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+
+
+
+
+
 
 
 
@@ -70,13 +109,12 @@ public class MainActivity extends AppCompatActivity {
         sliderModels.add(sliderModelMotionView3);
 
 
-
         locationViewPager.setAdapter(new SliderBoomGardiNazdikAdapter(sliderModels));
 
 
         locationViewPager.setClipToPadding(false);
         locationViewPager.setClipChildren(false);
-        locationViewPager.setOffscreenPageLimit(3);
+        locationViewPager.setOffscreenPageLimit(10);
         locationViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
 
@@ -92,5 +130,6 @@ public class MainActivity extends AppCompatActivity {
 
         locationViewPager.setPageTransformer(compositePageTransformer);
 
+        JazebeViewPager.setPageTransformer(compositePageTransformer);
     }
-    }
+}

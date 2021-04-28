@@ -15,11 +15,13 @@ import java.util.List;
 
 public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoomGardiNazdikAdapter.TravelLocationViewHolder> {
 
-    private List<SliderModel> sliderModels;
+    private final List<SliderModel> sliderModels;
 
     public SliderBoomGardiNazdikAdapter(List<SliderModel> sliderModels) {
         this.sliderModels = sliderModels;
     }
+
+
 
     @NonNull
     @Override
@@ -46,21 +48,19 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
     static class TravelLocationViewHolder extends RecyclerView.ViewHolder {
 
         private KenBurnsView kbvLocation;
-        private TextView txtTitle, txtLocation, txtStarRating;
+        private TextView txtTitle, txtLocation;
 
         TravelLocationViewHolder(@NonNull View itemView) {
             super(itemView);
             kbvLocation = itemView.findViewById(R.id.kbvLocation);
             txtTitle = itemView.findViewById(R.id.txtTitle);
             txtLocation = itemView.findViewById(R.id.txtlocation);
-            txtStarRating = itemView.findViewById(R.id.txtstarrating);
         }
 
         void setLocationData(SliderModel sliderModel) {
             Picasso.get().load(sliderModel.imageUrl).into(kbvLocation);
             txtTitle.setText(sliderModel.title);
             txtLocation.setText(sliderModel.location);
-            txtStarRating.setText(String.valueOf(sliderModel.starRating));
         }
     }
 }
