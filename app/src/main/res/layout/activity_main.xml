@@ -23,71 +23,80 @@
             layout="@layout/image_slider_top_mainactivity"
             app:layout_constraintTop_toBottomOf="@+id/include2" />
 
-<!--        <include-->
-<!--            layout="@layout/buttom_list_selection"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            app:layout_constraintTop_toBottomOf="@+id/include2" />-->
+        <include
+            layout="@layout/buttom_list_selection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/include2" />
 
-<!--        <include-->
-<!--            layout="@layout/info_hotel"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_margin="10dp" />-->
-
-<!--        <include-->
-<!--            layout="@layout/moarefi_koli_mainactivity"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_margin="10dp"-->
-<!--            android:layout_marginTop="20dp" />-->
-
-<!--        <include-->
-<!--            layout="@layout/moarefi_koli2_mainactivity"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_margin="10dp" />-->
-
-<!--        <include-->
-<!--            layout="@layout/emtiyaz_karbar_mainactivity"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_margin="10dp" />-->
-
-
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:scaleType="centerCrop"-->
-<!--            android:src="@drawable/map_pic" />-->
-
-<!--        <include-->
-<!--            layout="@layout/nazar_shoma_mainactivity"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_marginTop="20dp" />-->
-
-
-<!--        <include-->
-<!--            layout="@layout/porsesh_va_pasokh_mainactivity"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:layout_marginTop="20dp" />-->
-
-        <androidx.viewpager.widget.ViewPager
+        <include
+            layout="@layout/info_hotel"
             android:layout_width="match_parent"
-            android:layout_margin="10dp"
-            android:layout_height="300dp"
-            android:id="@+id/view_pagers"
-            android:foregroundGravity="center" />
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp" />
 
+        <include
+            layout="@layout/moarefi_koli_mainactivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:layout_marginTop="20dp" />
+
+        <include
+            layout="@layout/moarefi_koli2_mainactivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp" />
+
+        <include
+            layout="@layout/emtiyaz_karbar_mainactivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:src="@drawable/map_pic" />
+
+        <include
+            layout="@layout/nazar_shoma_mainactivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+
+        <include
+            layout="@layout/porsesh_va_pasokh_mainactivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+<!--        <androidx.viewpager.widget.ViewPager-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_margin="10dp"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:id="@+id/view_pagers"-->
+<!--            android:foregroundGravity="center" />-->
+
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/locationsviewPager"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:paddingStart="60dp"
+            android:paddingEnd="60dp" />
 
     </LinearLayout>
 </ScrollView>
