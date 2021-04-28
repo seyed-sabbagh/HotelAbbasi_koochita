@@ -10,6 +10,9 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.denzcoskun.imageslider.ImageSlider;
+import com.denzcoskun.imageslider.models.SlideModel;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,40 +26,49 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+
+        ImageSlider imageSlider = findViewById(R.id.image_slider);
+
+        List<SlideModel> slideModels = new ArrayList<>();
+
+        slideModels.add(new SlideModel("https://static.koochita.com/_images/hotels/hotel_abbasi/s-1.jpg"));
+        slideModels.add(new SlideModel("https://static.koochita.com/_images/hotels/hotel_abbasi/s-5.jpg"));
+        slideModels.add(new SlideModel("https://static.koochita.com/_images/hotels/hotel_abbasi/s-2.jpg"));
+        slideModels.add(new SlideModel("https://static.koochita.com/_images/hotels/hotel_abbasi/s-1.jpg"));
+
+        imageSlider.startSliding(3000);
+        imageSlider.setImageList(slideModels, false);
+
+
+
+
         ViewPager2 locationViewPager = findViewById(R.id.locationsviewPager);
 
         List<SliderModel> sliderModels = new ArrayList<>();
 
         SliderModel sliderModelMotionView = new SliderModel();
-        sliderModelMotionView.imageUrl = "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80";
-        sliderModelMotionView.title = "آموزش واویشکا";
-        sliderModelMotionView.location = " ۱۴ روز پیش";
+        sliderModelMotionView.imageUrl = "https://static.koochita.com/_images/majara/soffe/f-1.jpg";
+        sliderModelMotionView.title = "کوه صفه اسفهان";
+        sliderModelMotionView.location = "اصفهان اصفهان";
         sliderModelMotionView.starRating = 4.5f;
         sliderModels.add(sliderModelMotionView);
 
 
         SliderModel sliderModelMotionView2 = new SliderModel();
-        sliderModelMotionView2.imageUrl = "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80";
-        sliderModelMotionView2.title = "آموزش واویشکا";
-        sliderModelMotionView2.location = "۱۴ روز پیش";
+        sliderModelMotionView2.imageUrl = "https://static.koochita.com/_images/majara/lader/f-1.jpg";
+        sliderModelMotionView2.title = "چشمه و آبشار لادر";
+        sliderModelMotionView2.location = "خمینی شهر";
         sliderModelMotionView2.starRating = 4.5f;
         sliderModels.add(sliderModelMotionView2);
 
 
         SliderModel sliderModelMotionView3 = new SliderModel();
-        sliderModelMotionView3.imageUrl = "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80";
-        sliderModelMotionView3.title = "آموزش واویشکا";
-        sliderModelMotionView3.location = "۱۴ روز پیش";
+        sliderModelMotionView3.imageUrl = "https://static.koochita.com/_images/majara/ghare_kolahrod/f-1.jpg";
+        sliderModelMotionView3.title = "غار کلهرود اصفهان";
+        sliderModelMotionView3.location = "شاهین شهر";
         sliderModelMotionView3.starRating = 4.5f;
         sliderModels.add(sliderModelMotionView3);
 
-
-        SliderModel sliderModelMotionView4 = new SliderModel();
-        sliderModelMotionView4.imageUrl = "https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80";
-        sliderModelMotionView4.title = "آموزش واویشکا";
-        sliderModelMotionView4.location = "۱۴ روز پیش";
-        sliderModelMotionView4.starRating = 4.5f;
-        sliderModels.add(sliderModelMotionView4);
 
 
         locationViewPager.setAdapter(new SliderBoomGardiNazdikAdapter(sliderModels));
