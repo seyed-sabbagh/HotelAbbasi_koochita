@@ -18,13 +18,23 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    ViewPager2 JazebeViewPager;
+    ViewPager2 locationViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ImageSliderTop();
+        jazebeViewPager();
+        locationViewPager();
+        compositePageTransformer();
 
+
+    }
+
+    private void ImageSliderTop() {
         ImageSlider imageSlider = findViewById(R.id.image_slider);
 
         List<SlideModel> slideModels = new ArrayList<>();
@@ -36,52 +46,30 @@ public class MainActivity extends AppCompatActivity {
 
         imageSlider.startSliding(3000);
         imageSlider.setImageList(slideModels, false);
+    }
+
+    private void compositePageTransformer() {
+        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
+        compositePageTransformer.addTransformer(new MarginPageTransformer(20));
+        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
+            @Override
+            public void transformPage(@NonNull View page, float position) {
+                float r = 1 - Math.abs(position);
+                page.setScaleY(0.95f + r * 0.05f);
+            }
+        });
+
+        locationViewPager.setPageTransformer(compositePageTransformer);
+
+        JazebeViewPager.setPageTransformer(compositePageTransformer);
 
 
-        ViewPager2 JazebeViewPager = findViewById(R.id.locationsviewPager2);
+    }
 
-        List<SliderModelJazebe> sliderModelJazebes = new ArrayList<>();
-
-
-        SliderModelJazebe sliderModelJazebe = new SliderModelJazebe();
-        sliderModelJazebe.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
-        sliderModelJazebe.title = "مدرسه چهارباغ";
-        sliderModelJazebe.location = "اصفهان اصفهان";
-        sliderModelJazebe.starRating = 4.5f;
-        sliderModelJazebes.add(sliderModelJazebe);
-
-        SliderModelJazebe sliderModelJazebe2 = new SliderModelJazebe();
-        sliderModelJazebe2.imageUrl = "https://static.koochita.com/_images/amaken/honar_bazar/f-1.jpg";
-        sliderModelJazebe2.title = "بازار هنر";
-        sliderModelJazebe2.location = "اصفهان اصفهان";
-        sliderModelJazebe2.starRating = 4.5f;
-        sliderModelJazebes.add(sliderModelJazebe2);
-
-        SliderModelJazebe sliderModelJazebe3 = new SliderModelJazebe();
-        sliderModelJazebe3.imageUrl = "https://static.koochita.com/_images/amaken/chehelsotun/f-1.jpg";
-        sliderModelJazebe3.title = "کاخ چهل ستون";
-        sliderModelJazebe3.location = "اصفهان اصفهان";
-        sliderModelJazebe3.starRating = 4.5f;
-        sliderModelJazebes.add(sliderModelJazebe3);
-
-        JazebeViewPager.setAdapter(new SliderJazebeAdapter(sliderModelJazebes));
+    private void locationViewPager() {
 
 
-        JazebeViewPager.setClipToPadding(false);
-        JazebeViewPager.setClipChildren(false);
-        JazebeViewPager.setOffscreenPageLimit(3);
-        JazebeViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
-
-
-
-
-
-
-
-
-
-
-        ViewPager2 locationViewPager = findViewById(R.id.locationsviewPager);
+        locationViewPager = findViewById(R.id.locationsviewPager);
 
         List<SliderModel> sliderModels = new ArrayList<>();
 
@@ -118,18 +106,43 @@ public class MainActivity extends AppCompatActivity {
         locationViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
 
-        CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
-        compositePageTransformer.addTransformer(new MarginPageTransformer(20));
-        compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
-            @Override
-            public void transformPage(@NonNull View page, float position) {
-                float r = 1 - Math.abs(position);
-                page.setScaleY(0.95f + r * 0.05f);
-            }
-        });
+    }
 
-        locationViewPager.setPageTransformer(compositePageTransformer);
+    private void jazebeViewPager() {
 
-        JazebeViewPager.setPageTransformer(compositePageTransformer);
+
+        JazebeViewPager = findViewById(R.id.locationsviewPager2);
+        List<SliderModelJazebe> sliderModelJazebes = new ArrayList<>();
+
+
+        SliderModelJazebe sliderModelJazebe = new SliderModelJazebe();
+        sliderModelJazebe.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
+        sliderModelJazebe.title = "مدرسه چهارباغ";
+        sliderModelJazebe.location = "اصفهان اصفهان";
+        sliderModelJazebe.starRating = 4.5f;
+        sliderModelJazebes.add(sliderModelJazebe);
+
+        SliderModelJazebe sliderModelJazebe2 = new SliderModelJazebe();
+        sliderModelJazebe2.imageUrl = "https://static.koochita.com/_images/amaken/honar_bazar/f-1.jpg";
+        sliderModelJazebe2.title = "بازار هنر";
+        sliderModelJazebe2.location = "اصفهان اصفهان";
+        sliderModelJazebe2.starRating = 4.5f;
+        sliderModelJazebes.add(sliderModelJazebe2);
+
+        SliderModelJazebe sliderModelJazebe3 = new SliderModelJazebe();
+        sliderModelJazebe3.imageUrl = "https://static.koochita.com/_images/amaken/chehelsotun/f-1.jpg";
+        sliderModelJazebe3.title = "کاخ چهل ستون";
+        sliderModelJazebe3.location = "اصفهان اصفهان";
+        sliderModelJazebe3.starRating = 4.5f;
+        sliderModelJazebes.add(sliderModelJazebe3);
+
+        JazebeViewPager.setAdapter(new SliderJazebeAdapter(sliderModelJazebes));
+
+
+        JazebeViewPager.setClipToPadding(false);
+        JazebeViewPager.setClipChildren(false);
+        JazebeViewPager.setOffscreenPageLimit(3);
+        JazebeViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
     }
 }
