@@ -71,33 +71,33 @@ public class MainActivity extends AppCompatActivity {
 
         locationViewPager = findViewById(R.id.locationsviewPager);
 
-        List<SliderModel> sliderModels = new ArrayList<>();
+        List<SliderModelTabiat> sliderModelTabiats = new ArrayList<>();
 
-        SliderModel sliderModelMotionView = new SliderModel();
-        sliderModelMotionView.imageUrl = "https://static.koochita.com/_images/majara/soffe/f-1.jpg";
-        sliderModelMotionView.title = "کوه صفه اسفهان";
-        sliderModelMotionView.location = "اصفهان اصفهان";
-        sliderModelMotionView.starRating = 4.5f;
-        sliderModels.add(sliderModelMotionView);
-
-
-        SliderModel sliderModelMotionView2 = new SliderModel();
-        sliderModelMotionView2.imageUrl = "https://static.koochita.com/_images/majara/lader/f-1.jpg";
-        sliderModelMotionView2.title = "چشمه و آبشار لادر";
-        sliderModelMotionView2.location = "خمینی شهر";
-        sliderModelMotionView2.starRating = 4.5f;
-        sliderModels.add(sliderModelMotionView2);
+        SliderModelTabiat sliderModelTabiatMotionView = new SliderModelTabiat();
+        sliderModelTabiatMotionView.imageUrl = "https://static.koochita.com/_images/majara/soffe/f-1.jpg";
+        sliderModelTabiatMotionView.title = "کوه صفه اسفهان";
+        sliderModelTabiatMotionView.location = "اصفهان اصفهان";
+        sliderModelTabiatMotionView.starRating = 4.5f;
+        sliderModelTabiats.add(sliderModelTabiatMotionView);
 
 
-        SliderModel sliderModelMotionView3 = new SliderModel();
-        sliderModelMotionView3.imageUrl = "https://static.koochita.com/_images/majara/ghare_kolahrod/f-1.jpg";
-        sliderModelMotionView3.title = "غار کلهرود اصفهان";
-        sliderModelMotionView3.location = "شاهین شهر";
-        sliderModelMotionView3.starRating = 4.5f;
-        sliderModels.add(sliderModelMotionView3);
+        SliderModelTabiat sliderModelTabiatMotionView2 = new SliderModelTabiat();
+        sliderModelTabiatMotionView2.imageUrl = "https://static.koochita.com/_images/majara/lader/f-1.jpg";
+        sliderModelTabiatMotionView2.title = "چشمه و آبشار لادر";
+        sliderModelTabiatMotionView2.location = "خمینی شهر";
+        sliderModelTabiatMotionView2.starRating = 4.5f;
+        sliderModelTabiats.add(sliderModelTabiatMotionView2);
 
 
-        locationViewPager.setAdapter(new SliderBoomGardiNazdikAdapter(sliderModels));
+        SliderModelTabiat sliderModelTabiatMotionView3 = new SliderModelTabiat();
+        sliderModelTabiatMotionView3.imageUrl = "https://static.koochita.com/_images/majara/ghare_kolahrod/f-1.jpg";
+        sliderModelTabiatMotionView3.title = "غار کلهرود اصفهان";
+        sliderModelTabiatMotionView3.location = "شاهین شهر";
+        sliderModelTabiatMotionView3.starRating = 4.5f;
+        sliderModelTabiats.add(sliderModelTabiatMotionView3);
+
+
+        locationViewPager.setAdapter(new SliderBoomGardiNazdikAdapter(sliderModelTabiats));
 
 
         locationViewPager.setClipToPadding(false);

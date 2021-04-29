@@ -15,10 +15,10 @@ import java.util.List;
 
 public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoomGardiNazdikAdapter.TravelLocationViewHolder> {
 
-    private final List<SliderModel> sliderModels;
+    private final List<SliderModelTabiat> sliderModelTabiats;
 
-    public SliderBoomGardiNazdikAdapter(List<SliderModel> sliderModels) {
-        this.sliderModels = sliderModels;
+    public SliderBoomGardiNazdikAdapter(List<SliderModelTabiat> sliderModelTabiats) {
+        this.sliderModelTabiats = sliderModelTabiats;
     }
 
 
@@ -37,12 +37,12 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
 
     @Override
     public void onBindViewHolder(@NonNull TravelLocationViewHolder holder, int position) {
-        holder.setLocationData(sliderModels.get(position));
+        holder.setLocationData(sliderModelTabiats.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return sliderModels.size();
+        return sliderModelTabiats.size();
     }
 
     static class TravelLocationViewHolder extends RecyclerView.ViewHolder {
@@ -57,10 +57,10 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
             txtLocation = itemView.findViewById(R.id.txtlocation);
         }
 
-        void setLocationData(SliderModel sliderModel) {
-            Picasso.get().load(sliderModel.imageUrl).into(kbvLocation);
-            txtTitle.setText(sliderModel.title);
-            txtLocation.setText(sliderModel.location);
+        void setLocationData(SliderModelTabiat sliderModelTabiat) {
+            Picasso.get().load(sliderModelTabiat.imageUrl).into(kbvLocation);
+            txtTitle.setText(sliderModelTabiat.title);
+            txtLocation.setText(sliderModelTabiat.location);
         }
     }
 }
