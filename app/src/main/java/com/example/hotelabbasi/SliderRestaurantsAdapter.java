@@ -50,10 +50,10 @@ holder.setLocationData(sliderModelResturans.get(position));
             txtlocation = itemView.findViewById(R.id.txtlocation);
             txttitle = itemView.findViewById(R.id.txtTitle);
         }
-        void  setLocationData(SliderModelResturan sliderModelResturan){
-            Picasso.get().load(SliderModelResturan.imageUrl).into(kbvLocation);
-            txttitle.setText(sliderModelResturan.title);
-            txtlocation.setText(sliderModelResturan.location);
+        void setLocationData(SliderModelResturan sliderModelTabiat) {
+            Picasso.get().load(sliderModelTabiat.imageUrl).into(kbvLocation);
+            txttitle.setText(sliderModelTabiat.title);
+            txtlocation.setText(sliderModelTabiat.location);
         }
     }
 

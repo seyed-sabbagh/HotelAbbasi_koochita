@@ -52,10 +52,11 @@ public class SliderEghamatAdapter extends RecyclerView.Adapter<SliderEghamatAdap
             txtTitle = itemView.findViewById(R.id.txtTitle);
             txtLocation = itemView.findViewById(R.id.txtlocation);
         }
-        void setLocationData (SliderModelEghamat sliderModelEghamat){
-            Picasso.get().load(sliderModelEghamat.imageUrl).into(kbvLocation);
-            txtTitle.setText(sliderModelEghamat.title);
-            txtLocation.setText(sliderModelEghamat.location);
+        void setLocationData(SliderModelEghamat sliderModelTabiat) {
+            Picasso.get().load(sliderModelTabiat.imageUrl).into(kbvLocation);
+            txtTitle.setText(sliderModelTabiat.title);
+            txtLocation.setText(sliderModelTabiat.location);
+        }
         }
     }
-}
+

@@ -121,27 +121,27 @@ public class MainActivity extends AppCompatActivity {
         List<SliderModelResturan> sliderModelResturans = new ArrayList<>();
 
         SliderModelResturan sliderModelResturan = new SliderModelResturan();
-        sliderModelResturan.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
-        sliderModelResturan.title = "مدرسه چهارباغ";
+        sliderModelResturan.imageUrl = "https://static.koochita.com/_images/restaurant/res_maral_isfahan/f-1.jpg";
+        sliderModelResturan.title = "رستوران مارال";
         sliderModelResturan.location = "اصفهان اصفهان";
         sliderModelResturan.starRating = 4.5f;
         sliderModelResturans.add(sliderModelResturan);
 
 
         SliderModelResturan sliderModelResturan2 = new SliderModelResturan();
-        sliderModelResturan2.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
-        sliderModelResturan2.title = "مدرسه چهارباغ";
+        sliderModelResturan2.imageUrl = "https://static.koochita.com/_images/restaurant/res_zhik_isfahan/f-1.jpg";
+        sliderModelResturan2.title = "رستوران فرنگی ژیک";
         sliderModelResturan2.location = "اصفهان اصفهان";
         sliderModelResturan2.starRating = 4.5f;
-        sliderModelResturans.add(sliderModelResturan);
+        sliderModelResturans.add(sliderModelResturan2);
 
 
         SliderModelResturan sliderModelResturan3 = new SliderModelResturan();
-        sliderModelResturan3.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
-        sliderModelResturan3.title = "مدرسه چهارباغ";
+        sliderModelResturan3.imageUrl = "https://static.koochita.com/_images/restaurant/res_mr.kotlet_isfahan/f-1.jpg";
+        sliderModelResturan3.title = "فست فود آقای کتلت";
         sliderModelResturan3.location = "اصفهان اصفهان";
         sliderModelResturan3.starRating = 4.5f;
-        sliderModelResturans.add(sliderModelResturan);
+        sliderModelResturans.add(sliderModelResturan3);
 
         ResturanViewPager.setAdapter(new SliderRestaurantsAdapter(sliderModelResturans));
 
@@ -163,25 +163,27 @@ public class MainActivity extends AppCompatActivity {
         SliderModelEghamat sliderModelEghamat = new SliderModelEghamat();
 
 
-        sliderModelEghamat.imageUrl = "https://static.koochita.com/_images/majara/soffe/f-1.jpg";
-        sliderModelEghamat.title = "کوه صفه اسفهان";
+        sliderModelEghamat.imageUrl = "https://static.koochita.com/_images/hotels/hotel_abbasi/f-5.jpg";
+        sliderModelEghamat.title = "هتل عباسی";
         sliderModelEghamat.location = "اصفهان اصفهان";
         sliderModelEghamat.starRating = 4.5f;
         sliderModelEghamats.add(sliderModelEghamat);
 
+        SliderModelEghamat sliderModelEghamat2 = new SliderModelEghamat();
 
-        sliderModelEghamat.imageUrl = "https://static.koochita.com/_images/majara/soffe/f-1.jpg";
-        sliderModelEghamat.title = "کوه صفه اسفهان";
-        sliderModelEghamat.location = "اصفهان اصفهان";
-        sliderModelEghamat.starRating = 4.5f;
-        sliderModelEghamats.add(sliderModelEghamat);
+        sliderModelEghamat2.imageUrl = "https://static.koochita.com/_images/hotels/hotel_safir/f-1.jpg";
+        sliderModelEghamat2.title = "هتل سفیر";
+        sliderModelEghamat2.location = "اصفهان اصفهان";
+        sliderModelEghamat2.starRating = 4.5f;
+        sliderModelEghamats.add(sliderModelEghamat2);
 
+        SliderModelEghamat sliderModelEghamat3 = new SliderModelEghamat();
 
-        sliderModelEghamat.imageUrl = "https://static.koochita.com/_images/majara/soffe/f-1.jpg";
-        sliderModelEghamat.title = "کوه صفه اسفهان";
-        sliderModelEghamat.location = "اصفهان اصفهان";
-        sliderModelEghamat.starRating = 4.5f;
-        sliderModelEghamats.add(sliderModelEghamat);
+        sliderModelEghamat3.imageUrl = "https://static.koochita.com/_images/hotels/hotel_pars/f-1.jpg";
+        sliderModelEghamat3.title = "هتل پارس";
+        sliderModelEghamat3.location = "اصفهان اصفهان";
+        sliderModelEghamat3.starRating = 4.5f;
+        sliderModelEghamats.add(sliderModelEghamat3);
 
 
         EghamatViewPager.setAdapter(new SliderEghamatAdapter(sliderModelEghamats));
@@ -231,4 +233,6 @@ public class MainActivity extends AppCompatActivity {
         JazebeViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
     }
+
+
 }
