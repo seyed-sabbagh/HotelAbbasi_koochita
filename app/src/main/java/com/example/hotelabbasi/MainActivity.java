@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
 
     ViewPager2 JazebeViewPager;
     ViewPager2 locationViewPager;
+    ViewPager2 ResturanViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,45 @@ public class MainActivity extends AppCompatActivity {
         jazebeViewPager();
         locationViewPager();
         compositePageTransformer();
+        ResturanViewPager();
+
+    }
+
+    private void ResturanViewPager() {
+        ResturanViewPager = findViewById(R.id.locationsviewPager3);
+        List<SliderModelResturan> sliderModelResturans = new ArrayList<>();
+
+        SliderModelResturan sliderModelResturan = new SliderModelResturan();
+        sliderModelResturan.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
+        sliderModelResturan.title = "مدرسه چهارباغ";
+        sliderModelResturan.location = "اصفهان اصفهان";
+        sliderModelResturan.starRating = 4.5f;
+        sliderModelResturans.add(sliderModelResturan);
+
+
+        SliderModelResturan sliderModelResturan2 = new SliderModelResturan();
+        sliderModelResturan2.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
+        sliderModelResturan2.title = "مدرسه چهارباغ";
+        sliderModelResturan2.location = "اصفهان اصفهان";
+        sliderModelResturan2.starRating = 4.5f;
+        sliderModelResturans.add(sliderModelResturan);
+
+
+        SliderModelResturan sliderModelResturan3 = new SliderModelResturan();
+        sliderModelResturan3.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
+        sliderModelResturan3.title = "مدرسه چهارباغ";
+        sliderModelResturan3.location = "اصفهان اصفهان";
+        sliderModelResturan3.starRating = 4.5f;
+        sliderModelResturans.add(sliderModelResturan);
+
+       ResturanViewPager.setAdapter(new SliderRestaurantsAdapter(sliderModelResturans));
+
+
+       ResturanViewPager.setClipToPadding(false);
+       ResturanViewPager.setClipChildren(false);
+       ResturanViewPager.setOffscreenPageLimit(3);
+       ResturanViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
 
 
     }
