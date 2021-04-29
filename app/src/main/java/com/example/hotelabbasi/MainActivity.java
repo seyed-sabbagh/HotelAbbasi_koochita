@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 JazebeViewPager;
     ViewPager2 locationViewPager;
     ViewPager2 ResturanViewPager;
+    ViewPager2 EghamatViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,50 +30,14 @@ public class MainActivity extends AppCompatActivity {
 
         ImageSliderTop();
         jazebeViewPager();
+        EghamatViewPager();
         locationViewPager();
-        compositePageTransformer();
         ResturanViewPager();
-
+        compositePageTransformer();
     }
 
-    private void ResturanViewPager() {
-        ResturanViewPager = findViewById(R.id.locationsviewPager3);
-        List<SliderModelResturan> sliderModelResturans = new ArrayList<>();
-
-        SliderModelResturan sliderModelResturan = new SliderModelResturan();
-        sliderModelResturan.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
-        sliderModelResturan.title = "مدرسه چهارباغ";
-        sliderModelResturan.location = "اصفهان اصفهان";
-        sliderModelResturan.starRating = 4.5f;
-        sliderModelResturans.add(sliderModelResturan);
 
 
-        SliderModelResturan sliderModelResturan2 = new SliderModelResturan();
-        sliderModelResturan2.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
-        sliderModelResturan2.title = "مدرسه چهارباغ";
-        sliderModelResturan2.location = "اصفهان اصفهان";
-        sliderModelResturan2.starRating = 4.5f;
-        sliderModelResturans.add(sliderModelResturan);
-
-
-        SliderModelResturan sliderModelResturan3 = new SliderModelResturan();
-        sliderModelResturan3.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
-        sliderModelResturan3.title = "مدرسه چهارباغ";
-        sliderModelResturan3.location = "اصفهان اصفهان";
-        sliderModelResturan3.starRating = 4.5f;
-        sliderModelResturans.add(sliderModelResturan);
-
-       ResturanViewPager.setAdapter(new SliderRestaurantsAdapter(sliderModelResturans));
-
-
-       ResturanViewPager.setClipToPadding(false);
-       ResturanViewPager.setClipChildren(false);
-       ResturanViewPager.setOffscreenPageLimit(3);
-       ResturanViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
-
-
-
-    }
 
     private void ImageSliderTop() {
         ImageSlider imageSlider = findViewById(R.id.image_slider);
@@ -103,6 +68,9 @@ public class MainActivity extends AppCompatActivity {
 
         JazebeViewPager.setPageTransformer(compositePageTransformer);
 
+        ResturanViewPager.setPageTransformer(compositePageTransformer);
+
+        EghamatViewPager.setPageTransformer(compositePageTransformer);
 
     }
 
@@ -145,6 +113,84 @@ public class MainActivity extends AppCompatActivity {
         locationViewPager.setOffscreenPageLimit(10);
         locationViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
+
+    }
+
+    private void ResturanViewPager() {
+        ResturanViewPager = findViewById(R.id.locationsviewPager3);
+        List<SliderModelResturan> sliderModelResturans = new ArrayList<>();
+
+        SliderModelResturan sliderModelResturan = new SliderModelResturan();
+        sliderModelResturan.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
+        sliderModelResturan.title = "مدرسه چهارباغ";
+        sliderModelResturan.location = "اصفهان اصفهان";
+        sliderModelResturan.starRating = 4.5f;
+        sliderModelResturans.add(sliderModelResturan);
+
+
+        SliderModelResturan sliderModelResturan2 = new SliderModelResturan();
+        sliderModelResturan2.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
+        sliderModelResturan2.title = "مدرسه چهارباغ";
+        sliderModelResturan2.location = "اصفهان اصفهان";
+        sliderModelResturan2.starRating = 4.5f;
+        sliderModelResturans.add(sliderModelResturan);
+
+
+        SliderModelResturan sliderModelResturan3 = new SliderModelResturan();
+        sliderModelResturan3.imageUrl = "https://static.koochita.com/_images/amaken/chahar_bagh_school/f-1.jpg";
+        sliderModelResturan3.title = "مدرسه چهارباغ";
+        sliderModelResturan3.location = "اصفهان اصفهان";
+        sliderModelResturan3.starRating = 4.5f;
+        sliderModelResturans.add(sliderModelResturan);
+
+        ResturanViewPager.setAdapter(new SliderRestaurantsAdapter(sliderModelResturans));
+
+
+        ResturanViewPager.setClipToPadding(false);
+        ResturanViewPager.setClipChildren(false);
+        ResturanViewPager.setOffscreenPageLimit(3);
+        ResturanViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
+
+
+
+    }
+
+    private void EghamatViewPager() {
+        EghamatViewPager =findViewById(R.id.locationsviewPager4);
+
+        List<SliderModelEghamat> sliderModelEghamats = new ArrayList<>();
+
+        SliderModelEghamat sliderModelEghamat = new SliderModelEghamat();
+
+
+        sliderModelEghamat.imageUrl = "https://static.koochita.com/_images/majara/soffe/f-1.jpg";
+        sliderModelEghamat.title = "کوه صفه اسفهان";
+        sliderModelEghamat.location = "اصفهان اصفهان";
+        sliderModelEghamat.starRating = 4.5f;
+        sliderModelEghamats.add(sliderModelEghamat);
+
+
+        sliderModelEghamat.imageUrl = "https://static.koochita.com/_images/majara/soffe/f-1.jpg";
+        sliderModelEghamat.title = "کوه صفه اسفهان";
+        sliderModelEghamat.location = "اصفهان اصفهان";
+        sliderModelEghamat.starRating = 4.5f;
+        sliderModelEghamats.add(sliderModelEghamat);
+
+
+        sliderModelEghamat.imageUrl = "https://static.koochita.com/_images/majara/soffe/f-1.jpg";
+        sliderModelEghamat.title = "کوه صفه اسفهان";
+        sliderModelEghamat.location = "اصفهان اصفهان";
+        sliderModelEghamat.starRating = 4.5f;
+        sliderModelEghamats.add(sliderModelEghamat);
+
+
+        EghamatViewPager.setAdapter(new SliderEghamatAdapter(sliderModelEghamats));
+
+
+        EghamatViewPager.setClipToPadding(false);
+        EghamatViewPager.setClipChildren(false);
+        EghamatViewPager.setOffscreenPageLimit(10);
+        EghamatViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
     }
 
