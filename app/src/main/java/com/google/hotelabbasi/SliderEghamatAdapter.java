@@ -1,4 +1,4 @@
-package com.example.hotelabbasi;
+package com.google.hotelabbasi;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,54 +13,50 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoomGardiNazdikAdapter.TravelLocationViewHolder> {
+public class SliderEghamatAdapter extends RecyclerView.Adapter<SliderEghamatAdapter.TravelLocationViewHolder>{
 
-    private final List<SliderModelTabiat> sliderModelTabiats;
+    private List<SliderModelEghamat> sliderModelEghamats;
 
-    public SliderBoomGardiNazdikAdapter(List<SliderModelTabiat> sliderModelTabiats) {
-        this.sliderModelTabiats = sliderModelTabiats;
+    public SliderEghamatAdapter(List<SliderModelEghamat> sliderModelEghamats) {
+        this.sliderModelEghamats = sliderModelEghamats;
     }
-
-
 
     @NonNull
     @Override
     public TravelLocationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new TravelLocationViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.item_container_location,
-                        parent,
-                        false
-                )
-        );
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_container_location,
+                        parent,false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull TravelLocationViewHolder holder, int position) {
-        holder.setLocationData(sliderModelTabiats.get(position));
+        holder.setLocationData(sliderModelEghamats.get(position));
+
     }
 
     @Override
     public int getItemCount() {
-        return sliderModelTabiats.size();
+        return sliderModelEghamats.size();
     }
 
-    static class TravelLocationViewHolder extends RecyclerView.ViewHolder {
+    static class TravelLocationViewHolder extends RecyclerView.ViewHolder{
 
         private KenBurnsView kbvLocation;
         private TextView txtTitle, txtLocation;
 
-        TravelLocationViewHolder(@NonNull View itemView) {
+        public TravelLocationViewHolder(@NonNull View itemView) {
             super(itemView);
+
             kbvLocation = itemView.findViewById(R.id.kbvLocation);
             txtTitle = itemView.findViewById(R.id.txtTitle);
             txtLocation = itemView.findViewById(R.id.txtlocation);
         }
-
-        void setLocationData(SliderModelTabiat sliderModelTabiat) {
+        void setLocationData(SliderModelEghamat sliderModelTabiat) {
             Picasso.get().load(sliderModelTabiat.imageUrl).into(kbvLocation);
             txtTitle.setText(sliderModelTabiat.title);
             txtLocation.setText(sliderModelTabiat.location);
         }
+        }
     }
-}
+

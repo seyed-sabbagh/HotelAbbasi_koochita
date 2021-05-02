@@ -1,7 +1,8 @@
-package com.example.hotelabbasi;
+package com.google.hotelabbasi;
 
-public class SliderModelResturan {
+public class SliderModelEghamat {
 
     public String title,location,imageUrl;
     public float starRating;
+
 }

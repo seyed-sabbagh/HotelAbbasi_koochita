@@ -1,7 +1,10 @@
-package com.example.hotelabbasi;
+package com.google.hotelabbasi;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,9 +37,10 @@ public class MainActivity extends AppCompatActivity {
         locationViewPager();
         ResturanViewPager();
         compositePageTransformer();
+
+
+
     }
-
-
 
 
     private void ImageSliderTop() {
@@ -152,11 +156,10 @@ public class MainActivity extends AppCompatActivity {
         ResturanViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
 
-
     }
 
     private void EghamatViewPager() {
-        EghamatViewPager =findViewById(R.id.locationsviewPager4);
+        EghamatViewPager = findViewById(R.id.locationsviewPager4);
 
         List<SliderModelEghamat> sliderModelEghamats = new ArrayList<>();
 

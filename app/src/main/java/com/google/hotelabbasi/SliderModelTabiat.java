@@ -1,4 +1,4 @@
-package com.example.hotelabbasi;
+package com.google.hotelabbasi;
 
 public class SliderModelTabiat {
 

@@ -1,4 +1,4 @@
-package com.example.hotelabbasi;
+package com.google.hotelabbasi;
 
 import android.view.LayoutInflater;
 import android.view.View;
