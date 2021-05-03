@@ -37,9 +37,6 @@ public class MainActivity extends AppCompatActivity {
         locationViewPager();
         ResturanViewPager();
         compositePageTransformer();
-
-
-
     }
 
 
