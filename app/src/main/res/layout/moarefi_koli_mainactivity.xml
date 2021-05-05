@@ -3,8 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="10dp">
+    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+    android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/textView5"
@@ -38,15 +38,14 @@
 
 
     <TextView
+        android:textSize="13sp"
         android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:layout_marginTop="116dp"
         android:alpha="0.7"
         android:fontFamily="@font/iransans"
         android:text="@string/_300_5"
-        android:textAlignment="viewEnd"
+        android:textAlignment="center"
         android:textColor="#DD000000"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
@@ -83,7 +82,7 @@
         android:fontFamily="@font/iransans"
         android:text="@string/ghaza_irani"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
@@ -96,7 +95,7 @@
         android:fontFamily="@font/iransans"
         android:text="@string/ghaza_faranghi"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView8"
         app:layout_constraintEnd_toStartOf="@+id/textView8"
         app:layout_constraintTop_toTopOf="@+id/textView8" />
@@ -110,7 +109,7 @@
         android:fontFamily="@font/iransans"
         android:text="غذای محلی"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="@+id/textView9"
         app:layout_constraintEnd_toStartOf="@+id/textView9"
         app:layout_constraintTop_toTopOf="@+id/textView9" />
@@ -149,7 +148,7 @@
         android:fontFamily="@font/iransans"
         android:text="@string/dakhel_shahr"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="@+id/textView11"
         app:layout_constraintTop_toBottomOf="@+id/textView11" />
 
@@ -185,7 +184,7 @@
         android:fontFamily="@font/iransans"
         android:text="@string/sonati"
         android:textColor="@color/black"
-        android:textSize="16sp"
+        android:textSize="14sp"
         android:alpha="0.7"
         app:layout_constraintEnd_toEndOf="@+id/textView13"
         app:layout_constraintTop_toBottomOf="@+id/textView13" />

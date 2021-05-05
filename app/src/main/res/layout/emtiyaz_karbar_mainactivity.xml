@@ -75,9 +75,10 @@
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
     <View
+
         android:id="@+id/view2"
         android:layout_width="200dp"
-        android:layout_height="10dp"
+        android:layout_height="15dp"
         android:background="#e5e5e5"
         app:layout_constraintBottom_toBottomOf="@+id/textView27"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,7 +113,7 @@
     <View
         android:id="@+id/view3"
         android:layout_width="200dp"
-        android:layout_height="10dp"
+        android:layout_height="15dp"
         android:layout_marginTop="20dp"
         android:background="#4dc7bc"
         app:layout_constraintEnd_toEndOf="parent"
@@ -122,7 +123,7 @@
     <View
         android:id="@+id/view4"
         android:layout_width="200dp"
-        android:layout_height="10dp"
+        android:layout_height="15dp"
         android:layout_marginTop="20dp"
         android:background="#e5e5e5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -156,7 +157,7 @@
     <View
         android:id="@+id/view5"
         android:layout_width="200dp"
-        android:layout_height="10dp"
+        android:layout_height="15dp"
         android:layout_marginTop="20dp"
         android:background="#e5e5e5"
         app:layout_constraintEnd_toEndOf="parent"
@@ -191,7 +192,7 @@
     <View
         android:id="@+id/view6"
         android:layout_width="200dp"
-        android:layout_height="10dp"
+        android:layout_height="15dp"
         android:layout_marginTop="20dp"
         android:background="#e5e5e5"
         app:layout_constraintEnd_toEndOf="parent"

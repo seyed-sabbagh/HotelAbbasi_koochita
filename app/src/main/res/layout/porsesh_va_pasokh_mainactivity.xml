@@ -22,13 +22,15 @@
     <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
+        android:alpha="0.7"
         android:layout_height="wrap_content"
         android:fontFamily="@font/iransans"
         android:gravity="start"
         android:padding="10dp"
         android:text="@string/sample1"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="12sp"
+        android:textAlignment="textStart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
 
@@ -58,7 +60,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_margin="10dp"
-        app:cardCornerRadius="25dp"
+        app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView33">
 
@@ -73,14 +75,14 @@
     <com.tomlonghurst.expandablehinttext.ExpandableHintText
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:hint="شما چه سوالی دارید"
-        android:textColor="@color/white"
+        android:hint="شما چه سوالی دارید؟"
+        android:textColor="@color/black"
         app:floatingLabelColor="@android:color/darker_gray"
-        app:image="@drawable/ic_baseline_drafts_24"
+        app:image="@drawable/ic_send"
         app:imageColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viesws"
-        app:textBoxColor="@android:color/darker_gray" />
+        app:textBoxColor="#DDDDDD" />
     
 </androidx.constraintlayout.widget.ConstraintLayout>

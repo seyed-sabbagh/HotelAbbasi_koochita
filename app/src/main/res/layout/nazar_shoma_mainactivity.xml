@@ -52,6 +52,7 @@
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
         android:fontFamily="@font/iransans"
         android:text=" نظرت رو نسبت به این هتل به اشتراک بگذار"
         android:textColor="@color/black"
@@ -59,12 +60,13 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/viesws"
         app:layout_constraintEnd_toStartOf="@+id/viesws"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/viesws" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton"
         android:layout_width="wrap_content"
+        app:backgroundTint="@color/black"
+        android:background="@drawable/transparent_bg_bordered"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/white"
         android:drawableRight="@drawable/ic_video"
@@ -79,8 +81,10 @@
         android:id="@+id/materialButton2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        app:backgroundTint="@color/black"
+        android:background="@drawable/transparent_bg_bordered"
         android:backgroundTint="@android:color/white"
-        android:drawableRight="@drawable/ic_image"
+        android:drawableEnd="@drawable/ic_image"
         android:text="افضودن عکس"
         android:textColor="@color/black"
         app:cornerRadius="20dp"
@@ -98,12 +102,16 @@
         android:drawableRight="@drawable/ic_baseline_360_24"
         android:text="افضودن ویدٔیو ۳۶۰"
         android:textColor="@color/black"
+        app:backgroundTint="@color/black"
+        android:background="@drawable/transparent_bg_bordered"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/materialButton4"
         app:layout_constraintTop_toBottomOf="@+id/materialButton2" />
 
     <com.google.android.material.button.MaterialButton
+        app:backgroundTint="@color/black"
+        android:background="@drawable/transparent_bg_bordered"
         android:id="@+id/materialButton4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
