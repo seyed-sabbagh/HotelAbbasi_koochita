@@ -4,7 +4,7 @@
     android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:padding="10dp"
+    android:paddingBottom="20dp"
     android:layout_height="wrap_content">
 
 

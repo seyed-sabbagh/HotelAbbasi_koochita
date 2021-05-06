@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+    android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:paddingBottom="15dp"
-    android:paddingEnd="5dp"
+    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
     android:paddingStart="5dp"
     android:paddingTop="5dp"
-    android:layout_height="wrap_content">
+    android:paddingEnd="5dp"
+    android:paddingBottom="15dp">
 
     <View
         android:id="@+id/view"
@@ -69,68 +70,70 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/viesws" />
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/materialButton"
-        android:layout_width="wrap_content"
-        app:backgroundTint="@color/black"
-        android:background="@drawable/transparent_bg_bordered"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@color/white"
-        android:drawableRight="@drawable/ic_video"
+        android:drawableRight="@drawable/ic_baseline_ondemand_video_24"
         android:text="افضودن ویدیٔو"
         android:textColor="@color/black"
-        app:cornerRadius="20dp"
+        app:backgroundTint="@color/black"
         app:layout_constraintEnd_toStartOf="@+id/materialButton2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viesws" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:backgroundTint="@color/black"
-        android:background="@drawable/transparent_bg_bordered"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="5dp"
+        android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@android:color/white"
         android:drawableEnd="@drawable/ic_image"
         android:text="افضودن عکس"
         android:textColor="@color/black"
+        app:backgroundTint="@color/black"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/materialButton"
-        app:layout_constraintTop_toTopOf="@+id/materialButton" />
+        app:layout_constraintTop_toBottomOf="@+id/viesws" />
 
     <com.google.android.material.button.MaterialButton
+        android:layout_margin="5dp"
         android:id="@+id/materialButton3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
         android:layout_marginTop="10dp"
+        android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@android:color/white"
         android:drawableRight="@drawable/ic_baseline_360_24"
         android:text="افضودن ویدٔیو ۳۶۰"
         android:textColor="@color/black"
         app:backgroundTint="@color/black"
-        android:background="@drawable/transparent_bg_bordered"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/materialButton4"
         app:layout_constraintTop_toBottomOf="@+id/materialButton2" />
 
     <com.google.android.material.button.MaterialButton
-        app:backgroundTint="@color/black"
-        android:background="@drawable/transparent_bg_bordered"
         android:id="@+id/materialButton4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@android:color/white"
-        android:drawableRight="@drawable/ic_baseline_person_add_24"
+        android:drawableRight="@drawable/ic_baseline_support_agent_24"
         android:text="افضودن دوست"
         android:textColor="@color/black"
+        app:backgroundTint="@color/black"
         app:cornerRadius="20dp"
-        app:layout_constraintBottom_toBottomOf="@+id/materialButton3"
         app:layout_constraintEnd_toStartOf="@+id/materialButton3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/materialButton3" />
+        app:layout_constraintTop_toBottomOf="@+id/materialButton" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
