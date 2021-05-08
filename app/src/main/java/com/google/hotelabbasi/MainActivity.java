@@ -2,12 +2,11 @@ package com.google.hotelabbasi;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.ScrollView;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
@@ -25,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 locationViewPager;
     ViewPager2 ResturanViewPager;
     ViewPager2 EghamatViewPager;
+    ConstraintLayout constraintLayout, constraintLayout2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,25 @@ public class MainActivity extends AppCompatActivity {
         locationViewPager();
         ResturanViewPager();
         compositePageTransformer();
+
+
+        constraintLayout = findViewById(R.id.accelerate);
+        constraintLayout2 = findViewById(R.id.accelerate2);
+
+        ScrollView scrollView = findViewById(R.id.scrollViewMainActivity);
+        scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
+            @Override
+            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+//
+//                ConstraintLayout.LayoutParams l = (ConstraintLayout.LayoutParams) constraintLayout.getLayoutParams();
+//                l.setMargins(0,90,0,0);
+//                constraintLayout.setLayoutParams(l);
+
+                constraintLayout.setVisibility(View.VISIBLE);
+                constraintLayout2.setVisibility(View.GONE);
+
+            }
+        });
     }
 
 
