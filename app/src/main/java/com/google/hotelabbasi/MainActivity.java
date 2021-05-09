@@ -15,20 +15,20 @@ import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 ResturanViewPager;
     ViewPager2 EghamatViewPager;
     ConstraintLayout constraintLayout, constraintLayout2;
-    TextView mtextViewResult;
+    TextView txtHotelTitle, txtDescription;
     private CardView cardView;
     private RequestQueue mqueue;
 
@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity {
 
         cardView = findViewById(R.id.imageView6);
 
-        mtextViewResult = findViewById(R.id.HotelTitle);
+        txtHotelTitle = findViewById(R.id.HotelTitle);
+        txtDescription = findViewById(R.id.txtDescription);
 
         mqueue = Volley.newRequestQueue(this);
 
@@ -87,7 +88,40 @@ public class MainActivity extends AppCompatActivity {
     private void jsonParse() {
         String url = "http://192.168.0.163/data.json";
 
+        AsyncHttpClient client = new AsyncHttpClient();
 
+        client.get(url, new JsonHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+
+
+                try {
+//                    String str = "";
+//                    JSONObject jsonObject = new JSONObject(str);
+                    String HotelTitle = response.getString("keyword");
+                    String HotelDescription = response.getString("description");
+
+                    txtDescription.setText(HotelDescription);
+
+                    Log.d("TAG", "onResponse: " + HotelDescription);
+                    txtHotelTitle.setText(HotelTitle);
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
+                super.onFailure(statusCode, headers, throwable, errorResponse);
+            }
+        });
+    }
+        /*
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
@@ -95,9 +129,13 @@ public class MainActivity extends AppCompatActivity {
                 try {
 //                    String str = "";
 //                    JSONObject jsonObject = new JSONObject(str);
-                    String desc = response.getString("keyword");
-                    Log.d("TAG", "onResponse: " + desc);
-                    mtextViewResult.setText(desc);
+                    String HotelTitle = response.getString("keyword");
+                    String HotelDescription = response.getString("description");
+
+                    txtDescription.setText(HotelDescription);
+
+                    Log.d("TAG", "onResponse: " + HotelDescription);
+                    txtHotelTitle.setText(HotelTitle);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -113,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
 
         );
         mqueue.add(request);
-    }
+    }*/
 
 
     private void ImageSliderTop() {
