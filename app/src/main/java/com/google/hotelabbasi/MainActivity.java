@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         mtextviewResult = findViewById(R.id.HotelTitle);
 
-        CardView cardView = findViewById(R.id.CardView1);
+        CardView cardView = findViewById(R.id.CardView12);
 
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
