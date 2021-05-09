@@ -3,17 +3,29 @@ package com.google.hotelabbasi;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +37,27 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 ResturanViewPager;
     ViewPager2 EghamatViewPager;
     ConstraintLayout constraintLayout, constraintLayout2;
+    TextView mtextViewResult;
+    private CardView cardView;
+    private RequestQueue mqueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        cardView = findViewById(R.id.imageView6);
+
+        mtextViewResult = findViewById(R.id.HotelTitle);
+
+        mqueue = Volley.newRequestQueue(this);
+
+        cardView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                jsonParse();
+            }
+        });
 
         ImageSliderTop();
         jazebeViewPager();
@@ -56,6 +84,36 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+    }
+
+    private void jsonParse() {
+        String url = "";
+
+        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
+            @Override
+            public void onResponse(JSONObject response) {
+
+                try {
+                    JSONArray jsonArray = response.getJSONArray("");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject object = jsonArray.getJSONObject(i);
+
+                        String t = object.getString("keyword");
+                         mtextViewResult.setText(t);
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                error.printStackTrace();
+            }
+        }
+        );
     }
 
 
