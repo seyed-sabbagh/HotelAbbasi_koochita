@@ -3,19 +3,15 @@ package com.google.hotelabbasi;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ScrollView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
 import androidx.viewpager2.widget.ViewPager2;
 
-import com.android.volley.RequestQueue;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 
@@ -30,9 +26,6 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 EghamatViewPager;
     ConstraintLayout constraintLayout, constraintLayout2;
 
-    private TextView mtextviewResult;
-    private RequestQueue mqueue;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,20 +37,6 @@ public class MainActivity extends AppCompatActivity {
         locationViewPager();
         ResturanViewPager();
         compositePageTransformer();
-
-
-
-        mtextviewResult = findViewById(R.id.HotelTitle);
-
-        CardView cardView = findViewById(R.id.CardView12);
-
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "", Toast.LENGTH_SHORT).show();
-            }
-        });
-
 
 
         constraintLayout = findViewById(R.id.accelerate);
@@ -77,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
     }
 
 

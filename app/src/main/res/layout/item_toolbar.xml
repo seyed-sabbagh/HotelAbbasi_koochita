@@ -7,7 +7,7 @@
 
 
     <TextView
-        android:id="@+id/HotelTitle"
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
@@ -16,13 +16,13 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/CardView12"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/CardView12" />
+        app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/CardView12"
+        android:id="@+id/imageView6"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="5dp"
@@ -52,9 +52,9 @@
         android:layout_marginEnd="5dp"
         android:elevation="12dp"
         app:cardCornerRadius="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/CardView12"
+        app:layout_constraintEnd_toStartOf="@+id/imageView6"
         app:layout_constraintStart_toEndOf="@+id/cardView2"
-        app:layout_constraintTop_toTopOf="@+id/CardView12"
+        app:layout_constraintTop_toTopOf="@+id/imageView6"
         tools:ignore="MissingConstraints">
 
         <ImageView
@@ -96,6 +96,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/HotelTitle" />
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
