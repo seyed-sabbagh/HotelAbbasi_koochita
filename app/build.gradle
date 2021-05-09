@@ -62,5 +62,6 @@ dependencies {
     //async
     implementation 'com.loopj.android:android-async-http:1.4.9'
 
+    implementation 'com.facebook.shimmer:shimmer:0.3.0@aar'
 
 }

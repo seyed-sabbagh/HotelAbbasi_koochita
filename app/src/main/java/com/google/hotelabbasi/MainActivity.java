@@ -1,7 +1,6 @@
 package com.google.hotelabbasi;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -37,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 ResturanViewPager;
     ViewPager2 EghamatViewPager;
     ConstraintLayout constraintLayout, constraintLayout2;
-    TextView txtHotelTitle, txtDescription;
+    TextView txtHotelTitle, txtDescription, txtSite;
     private CardView cardView;
     private RequestQueue mqueue;
 
@@ -50,6 +49,7 @@ public class MainActivity extends AppCompatActivity {
 
         txtHotelTitle = findViewById(R.id.HotelTitle);
         txtDescription = findViewById(R.id.txtDescription);
+        txtSite = findViewById(R.id.Site);
 
         mqueue = Volley.newRequestQueue(this);
 
@@ -93,6 +93,11 @@ public class MainActivity extends AppCompatActivity {
         client.get(url, new JsonHttpResponseHandler() {
 
             @Override
+            public void onFinish() {
+                super.onFinish();
+            }
+
+            @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
 
@@ -102,11 +107,13 @@ public class MainActivity extends AppCompatActivity {
 //                    JSONObject jsonObject = new JSONObject(str);
                     String HotelTitle = response.getString("keyword");
                     String HotelDescription = response.getString("description");
+                    String Site = response.getString("site");
+
 
                     txtDescription.setText(HotelDescription);
-
-                    Log.d("TAG", "onResponse: " + HotelDescription);
                     txtHotelTitle.setText(HotelTitle);
+                    txtSite.setText(Site);
+//                    Log.d("TAG", "onResponse: " + HotelDescription);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -347,6 +354,7 @@ public class MainActivity extends AppCompatActivity {
         JazebeViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
     }
+
 
 
 }
