@@ -16,13 +16,13 @@
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/CardView1"
+        app:layout_constraintBottom_toBottomOf="@+id/CardView13"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/CardView1" />
+        app:layout_constraintTop_toTopOf="@+id/CardView13" />
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/CardView1"
+        android:id="@+id/CardView13"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="5dp"
@@ -52,9 +52,9 @@
         android:layout_marginEnd="5dp"
         android:elevation="12dp"
         app:cardCornerRadius="25dp"
-        app:layout_constraintEnd_toStartOf="@+id/CardView1"
+        app:layout_constraintEnd_toStartOf="@+id/CardView13"
         app:layout_constraintStart_toEndOf="@+id/cardView2"
-        app:layout_constraintTop_toTopOf="@+id/CardView1"
+        app:layout_constraintTop_toTopOf="@+id/CardView13"
         tools:ignore="MissingConstraints">
 
         <ImageView

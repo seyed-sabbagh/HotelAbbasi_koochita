@@ -90,7 +90,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView3" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/CardView1"
+        android:id="@+id/CardView13"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="5dp"
@@ -121,9 +121,9 @@
         android:layout_marginTop="5dp"
         android:elevation="12dp"
         app:cardCornerRadius="25dp"
-        app:layout_constraintEnd_toEndOf="@+id/CardView1"
-        app:layout_constraintStart_toStartOf="@+id/CardView1"
-        app:layout_constraintTop_toBottomOf="@+id/CardView1"
+        app:layout_constraintEnd_toEndOf="@+id/CardView13"
+        app:layout_constraintStart_toStartOf="@+id/CardView13"
+        app:layout_constraintTop_toBottomOf="@+id/CardView13"
         tools:ignore="MissingConstraints">
 
         <ImageView
