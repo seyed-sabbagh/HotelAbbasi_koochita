@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="5dp"
         android:fontFamily="@font/iransans"
-        android:text="@string/hotel_abbasi"
         android:textColor="@color/black"
         android:textSize="18sp"
         android:textStyle="bold"

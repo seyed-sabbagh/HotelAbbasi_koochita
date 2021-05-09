@@ -1,6 +1,7 @@
 package com.google.hotelabbasi;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -23,7 +24,6 @@ import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -52,12 +52,8 @@ public class MainActivity extends AppCompatActivity {
 
         mqueue = Volley.newRequestQueue(this);
 
-        cardView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                jsonParse();
-            }
-        });
+        jsonParse();
+
 
         ImageSliderTop();
         jazebeViewPager();
@@ -89,20 +85,20 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void jsonParse() {
-        String url = "";
+        String url = "http://192.168.0.163/data.json";
+
 
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
 
                 try {
-                    JSONArray jsonArray = response.getJSONArray("");
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject object = jsonArray.getJSONObject(i);
+//                    String str = "";
+//                    JSONObject jsonObject = new JSONObject(str);
+                    String desc = response.getString("keyword");
+                    Log.d("TAG", "onResponse: " + desc);
+                    mtextViewResult.setText(desc);
 
-                        String t = object.getString("keyword");
-                         mtextViewResult.setText(t);
-                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -112,8 +108,11 @@ public class MainActivity extends AppCompatActivity {
             public void onErrorResponse(VolleyError error) {
                 error.printStackTrace();
             }
+
         }
+
         );
+        mqueue.add(request);
     }
 
 
