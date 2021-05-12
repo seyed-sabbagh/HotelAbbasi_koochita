@@ -3,6 +3,7 @@ package com.google.hotelabbasi;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -19,6 +20,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
+import com.facebook.shimmer.ShimmerFrameLayout;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -38,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 EghamatViewPager;
     ConstraintLayout constraintLayout, constraintLayout2;
     TextView txtHotelTitle, txtDescription;
+    ShimmerFrameLayout shimmerFrameLayout;
+    LinearLayout shimerLayout;
     private CardView cardView;
     private RequestQueue mqueue;
 
@@ -46,15 +50,19 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        shimmerFrameLayout = findViewById(R.id.shimmer_view_container);
+        shimerLayout = findViewById(R.id.shimmer_layout);
+
         cardView = findViewById(R.id.imageView6);
 
         txtHotelTitle = findViewById(R.id.HotelTitle);
         txtDescription = findViewById(R.id.txtDescription);
-
         mqueue = Volley.newRequestQueue(this);
 
         jsonParse();
 
+
+        shimmerFrameLayout.startShimmer();
 
         ImageSliderTop();
         jazebeViewPager();
@@ -76,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
 //                l.setMargins(0,90,0,0);
 //                constraintLayout.setLayoutParams(l);
 
+
+
                 constraintLayout.setVisibility(View.VISIBLE);
                 constraintLayout2.setVisibility(View.GONE);
 
@@ -84,6 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+
 
     private void jsonParse() {
         String url = "http://192.168.0.163/data.json";
@@ -107,6 +118,11 @@ public class MainActivity extends AppCompatActivity {
 
                     Log.d("TAG", "onResponse: " + HotelDescription);
                     txtHotelTitle.setText(HotelTitle);
+
+
+
+                    shimmerFrameLayout.stopShimmer();
+                    shimerLayout.setVisibility(View.GONE);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

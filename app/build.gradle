@@ -62,5 +62,16 @@ dependencies {
     //async
     implementation 'com.loopj.android:android-async-http:1.4.9'
 
+    implementation 'com.github.ferrytan:skeletonplaceholderview:1.1.0'
+
+
+    implementation 'com.github.florent37:fiftyshadesof:1.0.0'
+
+
+    implementation 'com.facebook.shimmer:shimmer:0.5.0'
+
+
+
+
 
 }
