@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 ResturanViewPager;
     ViewPager2 EghamatViewPager;
     ConstraintLayout constraintLayout, constraintLayout2;
-    TextView txtHotelTitle, txtDescription;
+    TextView txtHotelTitle, txtDescription, txtSite;
     ShimmerFrameLayout shimmerFrameLayout;
     LinearLayout shimerLayout;
     private CardView cardView;
@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
         txtHotelTitle = findViewById(R.id.HotelTitle);
         txtDescription = findViewById(R.id.txtDescription);
+        txtSite = findViewById(R.id.Site);
+
         mqueue = Volley.newRequestQueue(this);
 
         jsonParse();
@@ -113,11 +115,13 @@ public class MainActivity extends AppCompatActivity {
 //                    JSONObject jsonObject = new JSONObject(str);
                     String HotelTitle = response.getString("keyword");
                     String HotelDescription = response.getString("description");
+                    String Site = response.getString("site");
+
 
                     txtDescription.setText(HotelDescription);
-
-                    Log.d("TAG", "onResponse: " + HotelDescription);
                     txtHotelTitle.setText(HotelTitle);
+                    txtSite.setText(Site);
+//                    Log.d("TAG", "onResponse: " + HotelDescription);
 
 
 
@@ -168,6 +172,9 @@ public class MainActivity extends AppCompatActivity {
         );
         mqueue.add(request);
     }*/
+
+
+
 
 
     private void ImageSliderTop() {
@@ -363,6 +370,7 @@ public class MainActivity extends AppCompatActivity {
         JazebeViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
     }
+
 
 
 }
