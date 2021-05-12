@@ -3,6 +3,7 @@ package com.google.hotelabbasi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -41,7 +42,7 @@ holder.setLocationData(sliderModelResturans.get(position));
 
     static class TravelLocationViewHolder extends RecyclerView.ViewHolder{
 
-        private KenBurnsView kbvLocation;
+        private ImageView kbvLocation;
         private TextView txttitle,txtlocation;
 
         public TravelLocationViewHolder(@NonNull View itemView) {

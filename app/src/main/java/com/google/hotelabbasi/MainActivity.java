@@ -1,7 +1,10 @@
 package com.google.hotelabbasi;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.view.ViewTreeObserver;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -37,11 +40,13 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 JazebeViewPager;
     ViewPager2 locationViewPager;
     ViewPager2 ResturanViewPager;
+    ImageView ImgCall;
     ViewPager2 EghamatViewPager;
-    ConstraintLayout constraintLayout, constraintLayout2;
+    ConstraintLayout constraintLayout, constraintLayout2, constraintLayoutImageSlider;
     TextView txtHotelTitle, txtDescription, txtSite;
-    ShimmerFrameLayout shimmerFrameLayout;
-    LinearLayout shimerLayout;
+    ShimmerFrameLayout shimmerFrameLayoutSliderTop;
+    LinearLayout shimerLayout_SliderTop;
+View ViewView;
     ScrollView scrollView;
     RelativeLayout relativeLayout;
     private CardView cardView;
@@ -51,23 +56,23 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        shimmerFrameLayout = findViewById(R.id.shimmer_view_container);
-        shimerLayout = findViewById(R.id.shimmer_layout);
+        constraintLayoutImageSlider = findViewById(R.id.ConstraintLayout_image_slider_top_mainactivity);
+        shimmerFrameLayoutSliderTop = findViewById(R.id.shimmer_view_SliderTop);
+        shimerLayout_SliderTop = findViewById(R.id.shimmer_layout_SliderTop);
         relativeLayout = findViewById(R.id.rel);
-        cardView = findViewById(R.id.imageView6);
-
+        cardView = findViewById(R.id.imageVsiew666);
+        ViewView = findViewById(R.id.ViewView);
         txtHotelTitle = findViewById(R.id.HotelTitle);
         txtDescription = findViewById(R.id.txtDescription);
         txtSite = findViewById(R.id.Site);
         scrollView = findViewById(R.id.scrollViewMainActivity);
         mqueue = Volley.newRequestQueue(this);
+        ImgCall = findViewById(R.id.ImgCall);
+
+        startShimmer();
+
 
         jsonParse();
-
-
-        shimmerFrameLayout.startShimmer();
-
         ImageSliderTop();
         jazebeViewPager();
         EghamatViewPager();
@@ -77,8 +82,24 @@ public class MainActivity extends AppCompatActivity {
 
 
         constraintLayout = findViewById(R.id.accelerate);
-        constraintLayout2 = findViewById(R.id.accelerate2);
 
+        scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+            @Override
+            public void onScrollChanged() {
+                int i = (int) ViewView.getY();
+                int i2 = (int) scrollView.getScrollY();
+                Log.d("TAG", "onScrollChange: " + i + " " + i2);
+
+                if (scrollView.getScrollY() > ViewView.getY()) {
+
+                    relativeLayout.setVisibility(View.VISIBLE);
+
+                }
+                if (scrollView.getScrollY() < ViewView.getY()) {
+                    relativeLayout.setVisibility(View.GONE);
+                }
+            }
+        });
 
         scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
@@ -89,11 +110,37 @@ public class MainActivity extends AppCompatActivity {
 //                constraintLayout.setLayoutParams(l);
 
 
-                constraintLayout.setVisibility(View.VISIBLE);
-                constraintLayout2.setVisibility(View.GONE);
+                int v1 = (int) scrollView.getScrollX();
+
+
+//
+//                final Handler handler = new Handler();
+//                handler.postDelayed(new Runnable() {
+//                    @Override
+//                    public void run() {
+//
+//                    }
+//                }, 2000);
+
 
             }
         });
+
+
+    }
+
+    private void Visibility() {
+
+        shimmerFrameLayoutSliderTop.stopShimmer();
+        shimerLayout_SliderTop.setVisibility(View.GONE);
+        constraintLayoutImageSlider.setVisibility(View.VISIBLE);
+
+
+    }
+
+    private void startShimmer() {
+
+        shimmerFrameLayoutSliderTop.startShimmer();
 
 
     }
@@ -124,11 +171,7 @@ public class MainActivity extends AppCompatActivity {
                     txtSite.setText(Site);
 //                    Log.d("TAG", "onResponse: " + HotelDescription);
 
-
-                    shimmerFrameLayout.stopShimmer();
-                    shimerLayout.setVisibility(View.GONE);
-                    relativeLayout.setVisibility(View.VISIBLE);
-                    scrollView.setVisibility(View.VISIBLE);
+                    Visibility();
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -143,37 +186,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-        /*
-        JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-
-                try {
-//                    String str = "";
-//                    JSONObject jsonObject = new JSONObject(str);
-                    String HotelTitle = response.getString("keyword");
-                    String HotelDescription = response.getString("description");
-
-                    txtDescription.setText(HotelDescription);
-
-                    Log.d("TAG", "onResponse: " + HotelDescription);
-                    txtHotelTitle.setText(HotelTitle);
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                error.printStackTrace();
-            }
-
-        }
-
-        );
-        mqueue.add(request);
-    }*/
 
 
     private void ImageSliderTop() {
@@ -192,11 +204,11 @@ public class MainActivity extends AppCompatActivity {
 
     private void compositePageTransformer() {
         CompositePageTransformer compositePageTransformer = new CompositePageTransformer();
-        compositePageTransformer.addTransformer(new MarginPageTransformer(20));
+        compositePageTransformer.addTransformer(new MarginPageTransformer(50));
         compositePageTransformer.addTransformer(new ViewPager2.PageTransformer() {
             @Override
             public void transformPage(@NonNull View page, float position) {
-                float r = 1 - Math.abs(position);
+                float r = 2 - Math.abs(position);
                 page.setScaleY(0.95f + r * 0.05f);
             }
         });
