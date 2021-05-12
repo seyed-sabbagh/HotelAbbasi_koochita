@@ -1,9 +1,9 @@
 package com.google.hotelabbasi;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
@@ -42,6 +42,8 @@ public class MainActivity extends AppCompatActivity {
     TextView txtHotelTitle, txtDescription, txtSite;
     ShimmerFrameLayout shimmerFrameLayout;
     LinearLayout shimerLayout;
+    ScrollView scrollView;
+    RelativeLayout relativeLayout;
     private CardView cardView;
     private RequestQueue mqueue;
 
@@ -52,13 +54,13 @@ public class MainActivity extends AppCompatActivity {
 
         shimmerFrameLayout = findViewById(R.id.shimmer_view_container);
         shimerLayout = findViewById(R.id.shimmer_layout);
-
+        relativeLayout = findViewById(R.id.rel);
         cardView = findViewById(R.id.imageView6);
 
         txtHotelTitle = findViewById(R.id.HotelTitle);
         txtDescription = findViewById(R.id.txtDescription);
         txtSite = findViewById(R.id.Site);
-
+        scrollView = findViewById(R.id.scrollViewMainActivity);
         mqueue = Volley.newRequestQueue(this);
 
         jsonParse();
@@ -77,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
         constraintLayout = findViewById(R.id.accelerate);
         constraintLayout2 = findViewById(R.id.accelerate2);
 
-        ScrollView scrollView = findViewById(R.id.scrollViewMainActivity);
+
         scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
             @Override
             public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
@@ -85,7 +87,6 @@ public class MainActivity extends AppCompatActivity {
 //                ConstraintLayout.LayoutParams l = (ConstraintLayout.LayoutParams) constraintLayout.getLayoutParams();
 //                l.setMargins(0,90,0,0);
 //                constraintLayout.setLayoutParams(l);
-
 
 
                 constraintLayout.setVisibility(View.VISIBLE);
@@ -124,9 +125,10 @@ public class MainActivity extends AppCompatActivity {
 //                    Log.d("TAG", "onResponse: " + HotelDescription);
 
 
-
                     shimmerFrameLayout.stopShimmer();
                     shimerLayout.setVisibility(View.GONE);
+                    relativeLayout.setVisibility(View.VISIBLE);
+                    scrollView.setVisibility(View.VISIBLE);
 
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -172,9 +174,6 @@ public class MainActivity extends AppCompatActivity {
         );
         mqueue.add(request);
     }*/
-
-
-
 
 
     private void ImageSliderTop() {
@@ -370,7 +369,6 @@ public class MainActivity extends AppCompatActivity {
         JazebeViewPager.getChildAt(0).setOverScrollMode(RecyclerView.OVER_SCROLL_NEVER);
 
     }
-
 
 
 }
