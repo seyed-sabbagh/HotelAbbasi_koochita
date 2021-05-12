@@ -161,6 +161,9 @@ public class MainActivity extends AppCompatActivity {
     }*/
 
 
+
+
+
     private void ImageSliderTop() {
         ImageSlider imageSlider = findViewById(R.id.image_slider);
 
