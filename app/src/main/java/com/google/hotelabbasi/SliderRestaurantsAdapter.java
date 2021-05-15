@@ -3,6 +3,7 @@ package com.google.hotelabbasi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class SliderRestaurantsAdapter extends RecyclerView.Adapter<SliderRestaurantsAdapter.TravelLocationViewHolder> {
 
-private final List<SliderModelResturan> sliderModelResturans;
+    private final List<SliderModelResturan> sliderModelResturans;
 
     public SliderRestaurantsAdapter(List<SliderModelResturan> sliderModelResturans) {
         this.sliderModelResturans = sliderModelResturans;
@@ -31,7 +32,7 @@ private final List<SliderModelResturan> sliderModelResturans;
 
     @Override
     public void onBindViewHolder(@NonNull TravelLocationViewHolder holder, int position) {
-holder.setLocationData(sliderModelResturans.get(position));
+        holder.setLocationData(sliderModelResturans.get(position));
     }
 
     @Override
@@ -41,7 +42,7 @@ holder.setLocationData(sliderModelResturans.get(position));
 
     static class TravelLocationViewHolder extends RecyclerView.ViewHolder{
 
-        private KenBurnsView kbvLocation;
+        private ImageView kbvLocation;
         private TextView txttitle,txtlocation;
 
         public TravelLocationViewHolder(@NonNull View itemView) {

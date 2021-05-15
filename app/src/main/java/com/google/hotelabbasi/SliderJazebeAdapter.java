@@ -3,6 +3,7 @@ package com.google.hotelabbasi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,7 +44,7 @@ public class SliderJazebeAdapter extends RecyclerView.Adapter<SliderJazebeAdapte
 
     static class SliderJazebeViewHolder extends RecyclerView.ViewHolder {
 
-        private KenBurnsView kbvLocation;
+        private ImageView kbvLocation;
 
         private TextView txtTitle, txtLocation;
 
