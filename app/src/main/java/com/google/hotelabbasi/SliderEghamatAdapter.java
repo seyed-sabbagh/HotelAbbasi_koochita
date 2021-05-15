@@ -3,7 +3,6 @@ package com.google.hotelabbasi;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -43,7 +42,7 @@ public class SliderEghamatAdapter extends RecyclerView.Adapter<SliderEghamatAdap
 
     static class TravelLocationViewHolder extends RecyclerView.ViewHolder{
 
-        private ImageView kbvLocation;
+        private KenBurnsView kbvLocation;
         private TextView txtTitle, txtLocation;
 
         public TravelLocationViewHolder(@NonNull View itemView) {

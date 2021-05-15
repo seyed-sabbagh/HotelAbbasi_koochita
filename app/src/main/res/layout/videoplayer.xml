@@ -8,7 +8,6 @@
     android:background="@drawable/transparent_bg_bordered_bacgraond_activity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/ConstraintLayoutImg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -47,8 +46,8 @@
             android:text="KoochitaTV"
             android:textColor="@color/blue_web"
             android:textSize="10dp"
-            app:layout_constraintEnd_toStartOf="@+id/imageVsiew666"
-            app:layout_constraintTop_toTopOf="@+id/imageVsiew666" />
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -63,7 +62,7 @@
 
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/imageVsiew666"
+            android:id="@+id/imageView6"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:elevation="12dp"
