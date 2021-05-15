@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         shimmerFrameLayout.startShimmer();
 
+
         ImageSliderTop();
         jazebeViewPager();
         EghamatViewPager();
