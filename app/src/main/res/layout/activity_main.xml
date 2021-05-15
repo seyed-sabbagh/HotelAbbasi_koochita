@@ -7,6 +7,23 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:visibility="gone"
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/shimmer_layout_SliderTop"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <include layout="@layout/shimme_image_slider_top_mainactivity" />
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+
     <RelativeLayout
         android:id="@+id/rel"
         android:layout_width="match_parent"
@@ -131,6 +148,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/black"
             android:orientation="vertical">
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/accelerate2"

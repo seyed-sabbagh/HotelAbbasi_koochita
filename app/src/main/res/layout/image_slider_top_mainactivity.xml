@@ -5,33 +5,11 @@
     android:layout_height="200dp"
     android:background="@drawable/transparent_bg_bordered">
 
-    <com.facebook.shimmer.ShimmerFrameLayout
-        android:visibility="visible"
-        android:id="@+id/shimmer_view_SliderTop"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <LinearLayout
-            android:id="@+id/shimmer_layout_SliderTop"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <include layout="@layout/shimme_image_slider_top_mainactivity" />
-
-
-        </LinearLayout>
-    </com.facebook.shimmer.ShimmerFrameLayout>
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/ConstraintLayout_image_slider_top_mainactivity"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="invisible">
+        android:visibility="visible">
 
         <com.denzcoskun.imageslider.ImageSlider
             android:id="@+id/image_slider"

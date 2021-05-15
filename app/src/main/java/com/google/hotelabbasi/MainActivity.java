@@ -42,10 +42,10 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 ResturanViewPager;
     ImageView ImgCall;
     ViewPager2 EghamatViewPager;
-    ConstraintLayout constraintLayout, constraintLayout2, constraintLayoutImageSlider;
+    ConstraintLayout constraintLayout, cont_list, constraintLayoutImageSlider;
     TextView txtHotelTitle, txtDescription, txtSite;
-    ShimmerFrameLayout shimmerFrameLayoutSliderTop;
-    LinearLayout shimerLayout_SliderTop;
+    ShimmerFrameLayout shimmerFrameLayoutSliderTop,shimmer_list;
+    LinearLayout shimerLayout_SliderTop , shimmer_layout_list;
     View ViewView;
     ScrollView scrollView;
     RelativeLayout relativeLayout;
@@ -56,8 +56,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         constraintLayoutImageSlider = findViewById(R.id.ConstraintLayout_image_slider_top_mainactivity);
-        shimmerFrameLayoutSliderTop = findViewById(R.id.shimmer_view_SliderTop);
+        shimmerFrameLayoutSliderTop = findViewById(R.id.shimmer_view_container);
         shimerLayout_SliderTop = findViewById(R.id.shimmer_layout_SliderTop);
         relativeLayout = findViewById(R.id.rel);
         cardView = findViewById(R.id.imageVsiew666);
@@ -70,7 +71,6 @@ public class MainActivity extends AppCompatActivity {
         ImgCall = findViewById(R.id.ImgCall);
 
         startShimmer();
-
 
         jsonParse();
         ImageSliderTop();
@@ -130,17 +130,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Visibility() {
-
         shimmerFrameLayoutSliderTop.stopShimmer();
-        shimerLayout_SliderTop.setVisibility(View.GONE);
-        constraintLayoutImageSlider.setVisibility(View.VISIBLE);
-
+        shimmerFrameLayoutSliderTop.setVisibility(View.GONE);
 
     }
 
     private void startShimmer() {
 
         shimmerFrameLayoutSliderTop.startShimmer();
+
 
 
     }
@@ -172,6 +170,7 @@ public class MainActivity extends AppCompatActivity {
 //                    Log.d("TAG", "onResponse: " + HotelDescription);
 
                     Visibility();
+
 
                 } catch (JSONException e) {
                     e.printStackTrace();
