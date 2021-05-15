@@ -1,5 +1,7 @@
 package com.google.hotelabbasi;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -9,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -42,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 ResturanViewPager;
     ImageView ImgCall;
     ViewPager2 EghamatViewPager;
-    ConstraintLayout constraintLayout, cont_list, constraintLayoutImageSlider;
+    ConstraintLayout ConstVideo,constraintLayout, cont_list, constraintLayoutImageSlider;
     TextView txtHotelTitle, txtDescription, txtSite;
     ShimmerFrameLayout shimmerFrameLayoutSliderTop,shimmer_list;
     LinearLayout shimerLayout_SliderTop , shimmer_layout_list;
@@ -56,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ConstVideo = findViewById(R.id.ConstVideo);
         constraintLayoutImageSlider = findViewById(R.id.ConstraintLayout_image_slider_top_mainactivity);
         shimmerFrameLayoutSliderTop = findViewById(R.id.shimmer_view_container);
         shimerLayout_SliderTop = findViewById(R.id.shimmer_layout_SliderTop);
@@ -126,6 +129,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        ConstVideo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String url = "https://koochitatv.com/video/show/8uU6LhcBap";
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(url));
+                startActivity(i);            }
+        });
 
     }
 

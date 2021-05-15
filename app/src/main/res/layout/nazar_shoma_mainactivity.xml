@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
@@ -10,6 +9,17 @@
     android:paddingTop="5dp"
     android:paddingEnd="5dp"
     android:paddingBottom="15dp">
+
+    <ImageView
+
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="25dp"
+        android:src="@drawable/smile"
+        app:layout_constraintBottom_toTopOf="@+id/materialButton"
+        app:layout_constraintEnd_toStartOf="@+id/textView26"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView26" />
 
     <View
         android:id="@+id/view"
@@ -55,7 +65,6 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-
         android:id="@+id/textView26"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -102,10 +111,10 @@
         app:layout_constraintTop_toBottomOf="@+id/viesws" />
 
     <com.google.android.material.button.MaterialButton
-        android:layout_margin="5dp"
         android:id="@+id/materialButton3"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_margin="5dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@android:color/white"
@@ -120,9 +129,9 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton4"
-        android:layout_margin="5dp"
         android:layout_width="0dp"
         android:layout_height="40dp"
+        android:layout_margin="5dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@android:color/white"

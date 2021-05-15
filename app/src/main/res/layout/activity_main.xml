@@ -149,7 +149,6 @@
             android:backgroundTint="@color/black"
             android:orientation="vertical">
 
-
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/accelerate2"
                 android:layout_width="match_parent"
@@ -1069,16 +1068,51 @@
                 android:layout_margin="5dp"
                 android:layout_marginTop="20dp" />
 
+            <LinearLayout
+                android:layout_margin="5dp"
+                android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_gravity="end"
+                android:layout_marginTop="40dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="bottom"
+                    android:layout_marginEnd="5dp"
+                    android:fontFamily="@font/iransans"
+                    android:gravity="center"
+                    android:padding="5dp"
+                    android:text="بوم گردی های نزدیک"
+                    android:textColor="@color/black"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/koochitalogo" />
+            </LinearLayout>
+
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/locationsviewPager"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="210dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
-                android:paddingStart="30dp"
-                android:paddingEnd="90dp" />
+                android:paddingStart="20dp"
+                android:paddingEnd="70dp" />
 
-
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="35dp"
@@ -1110,11 +1144,11 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/locationsviewPager2"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="210dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
-                android:paddingStart="40dp"
-                android:paddingEnd="40dp" />
+                android:paddingStart="20dp"
+                android:paddingEnd="70dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -1147,11 +1181,11 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/locationsviewPager3"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="210dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
-                android:paddingStart="40dp"
-                android:paddingEnd="40dp" />
+                android:paddingStart="20dp"
+                android:paddingEnd="70dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -1184,11 +1218,11 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/locationsviewPager4"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
+                android:layout_height="210dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
-                android:paddingStart="40dp"
-                android:paddingEnd="40dp" />
+                android:paddingStart="20dp"
+                android:paddingEnd="70dp" />
 
 
         </LinearLayout>
