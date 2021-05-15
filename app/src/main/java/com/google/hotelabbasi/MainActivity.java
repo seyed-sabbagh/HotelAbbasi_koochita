@@ -63,6 +63,7 @@ View ViewView;
         cardView = findViewById(R.id.imageVsiew666);
         ViewView = findViewById(R.id.ViewView);
         txtHotelTitle = findViewById(R.id.HotelTitle);
+
         txtDescription = findViewById(R.id.txtDescription);
         txtSite = findViewById(R.id.Site);
         scrollView = findViewById(R.id.scrollViewMainActivity);
