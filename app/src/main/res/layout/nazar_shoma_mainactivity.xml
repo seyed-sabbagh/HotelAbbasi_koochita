@@ -12,14 +12,15 @@
 
     <ImageView
 
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="25dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="7dp"
+        android:layout_marginEnd="5dp"
+        android:layout_marginBottom="8dp"
         android:src="@drawable/smile"
         app:layout_constraintBottom_toTopOf="@+id/materialButton"
         app:layout_constraintEnd_toStartOf="@+id/textView26"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView26" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <View
         android:id="@+id/view"
@@ -47,11 +48,11 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/viesws"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
-        android:elevation="20dp"
+        android:elevation="25dp"
         app:cardCornerRadius="25dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view">
@@ -60,6 +61,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:alpha="0.8"
+            android:scaleType="centerCrop"
             android:src="@drawable/nopicapp" />
 
     </androidx.cardview.widget.CardView>
@@ -83,10 +85,13 @@
         android:id="@+id/materialButton"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_margin="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginStart="2dp"
         android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@color/white"
-        android:drawableRight="@drawable/ic_baseline_ondemand_video_24"
+        android:drawableEnd="@drawable/ic_baseline_ondemand_video_24"
         android:text="افضودن ویدیٔو"
         android:textColor="@color/black"
         app:backgroundTint="@color/black"
@@ -98,7 +103,10 @@
         android:id="@+id/materialButton2"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_margin="5dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="2dp"
         android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@android:color/white"
         android:drawableEnd="@drawable/ic_image"
@@ -114,7 +122,7 @@
         android:id="@+id/materialButton3"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@android:color/white"
@@ -131,7 +139,7 @@
         android:id="@+id/materialButton4"
         android:layout_width="0dp"
         android:layout_height="40dp"
-        android:layout_margin="5dp"
+        android:layout_margin="2dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/transparent_bg_normal"
         android:backgroundTint="@android:color/white"

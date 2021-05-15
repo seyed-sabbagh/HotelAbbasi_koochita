@@ -1106,11 +1106,9 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/locationsviewPager"
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
+                android:layout_height="185dp"
                 android:paddingStart="20dp"
-                android:paddingEnd="70dp" />
+                android:paddingEnd="40dp" />
 
             </LinearLayout>
             <LinearLayout
@@ -1144,11 +1142,9 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/locationsviewPager2"
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
+                android:layout_height="185dp"
                 android:paddingStart="20dp"
-                android:paddingEnd="70dp" />
+                android:paddingEnd="40dp"  />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -1181,11 +1177,9 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/locationsviewPager3"
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
+                android:layout_height="185dp"
                 android:paddingStart="20dp"
-                android:paddingEnd="70dp" />
+                android:paddingEnd="40dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -1218,11 +1212,9 @@
             <androidx.viewpager2.widget.ViewPager2
                 android:id="@+id/locationsviewPager4"
                 android:layout_width="match_parent"
-                android:layout_height="210dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
+                android:layout_height="185dp"
                 android:paddingStart="20dp"
-                android:paddingEnd="70dp" />
+                android:paddingEnd="40dp"  />
 
 
         </LinearLayout>

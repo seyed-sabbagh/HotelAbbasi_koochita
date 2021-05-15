@@ -251,7 +251,7 @@
             app:layout_constraintTop_toBottomOf="@+id/HotelTitles2" />
 
         <TextView
-            android:id="@+id/Site"
+            android:id="@+id/Site2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
