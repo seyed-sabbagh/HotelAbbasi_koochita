@@ -25,6 +25,13 @@
     <string name="internet_labi">اینترنت لابی</string>
     <string name="resturan">رستوران</string>
     <string name="kafi_shap">کافی شاپ</string>
+    <string name="ic_monator_web">"\uE01E"</string>
+    <string name="ic_tel_web">"\uE026</string>
+    <string name="ic_location_web">"\uE019"</string>
+    <string name="ic_star_web">"\uE00B"</string>
+    <string name="ic_bag_web">"\uE0C5"</string>
+    <string name="ic_bookmark_web">"\uE0DD"</string>
     <string name="noe_otagh">نوع اتاق</string>
+    <string name="ic_Image_web">"\uE0B1"</string>
     <string name="sample1">سؤلات خود را بپرسید تا با کمک دوستانتان آگاهانه‌تر سفر کنید. همچنین می‌توانید با پاسخ یه سؤالات دوستانتان علاوه بر دریافت امتیاز، اطلاعات خود را به اشتراک بگذارید.</string>
 </resources>

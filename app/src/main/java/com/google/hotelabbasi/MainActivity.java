@@ -1,17 +1,16 @@
 package com.google.hotelabbasi;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewTreeObserver;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -43,12 +42,13 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 JazebeViewPager;
     ViewPager2 locationViewPager;
     ViewPager2 ResturanViewPager;
-    ImageView ImgCall;
+    TextView ImgCall;
     ViewPager2 EghamatViewPager;
-    ConstraintLayout ConstVideo,constraintLayout, cont_list, constraintLayoutImageSlider;
-    TextView txtHotelTitle, txtDescription, txtSite;
-    ShimmerFrameLayout shimmerFrameLayoutSliderTop,shimmer_list;
-    LinearLayout shimerLayout_SliderTop , shimmer_layout_list;
+    Typeface typeface;
+    ConstraintLayout ConstVideo, constraintLayout, cont_list, constraintLayoutImageSlider;
+    TextView TxtImageWeb, TxtBag,TxtBookmark, Txtstar ,Txtstar2 ,Txtstar3 ,Txtstar4 ,Txtstar5 , imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
+    ShimmerFrameLayout shimmerFrameLayoutSliderTop, shimmer_list;
+    LinearLayout shimerLayout_SliderTop, shimmer_layout_list;
     View ViewView;
     ScrollView scrollView;
     RelativeLayout relativeLayout;
@@ -60,18 +60,28 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ConstVideo = findViewById(R.id.ConstVideo);
+        Txtstar=findViewById(R.id.Txtstar);
+        TxtImageWeb=findViewById(R.id.TxtImageWeb);
+        TxtBag= findViewById(R.id.TxtBag);
+        Txtstar2=findViewById(R.id.Txtstar2);
+        Txtstar3=findViewById(R.id.Txtstar3);
+        TxtBookmark=findViewById(R.id.TxtBookmark);
+        Txtstar4=findViewById(R.id.Txtstar4);
+        Txtstar5=findViewById(R.id.Txtstar5);
         constraintLayoutImageSlider = findViewById(R.id.ConstraintLayout_image_slider_top_mainactivity);
         shimmerFrameLayoutSliderTop = findViewById(R.id.shimmer_view_container);
         shimerLayout_SliderTop = findViewById(R.id.shimmer_layout_SliderTop);
         relativeLayout = findViewById(R.id.rel);
+        accelerate = findViewById(R.id.accelerate00);
         cardView = findViewById(R.id.imageVsiew666);
+        imageView2002 = findViewById(R.id.TxtLocation);
         ViewView = findViewById(R.id.ViewView);
         txtHotelTitle = findViewById(R.id.HotelTitle);
         txtDescription = findViewById(R.id.txtDescription);
         txtSite = findViewById(R.id.Site);
         scrollView = findViewById(R.id.scrollViewMainActivity);
         mqueue = Volley.newRequestQueue(this);
-        ImgCall = findViewById(R.id.ImgCall);
+        ImgCall = findViewById(R.id.TxtCall2);
 
         startShimmer();
 
@@ -82,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
         locationViewPager();
         ResturanViewPager();
         compositePageTransformer();
-
+        TypeFace();
 
         constraintLayout = findViewById(R.id.accelerate);
 
@@ -136,9 +146,26 @@ public class MainActivity extends AppCompatActivity {
                 String url = "https://koochitatv.com/video/show/8uU6LhcBap";
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(url));
-                startActivity(i);            }
+                startActivity(i);
+            }
         });
 
+    }
+
+    private void TypeFace() {
+
+        typeface = Typeface.createFromAsset(getAssets(), "shazdemosafer.ttf");
+        accelerate.setTypeface(typeface);
+        ImgCall.setTypeface(typeface);
+        imageView2002.setTypeface(typeface);
+        Txtstar.setTypeface(typeface);
+        Txtstar2.setTypeface(typeface);
+        TxtBag.setTypeface(typeface);
+        Txtstar3.setTypeface(typeface);
+        Txtstar4.setTypeface(typeface);
+        Txtstar5.setTypeface(typeface);
+        TxtBookmark.setTypeface(typeface);
+        TxtImageWeb.setTypeface(typeface);
     }
 
     private void Visibility() {
@@ -150,7 +177,6 @@ public class MainActivity extends AppCompatActivity {
     private void startShimmer() {
 
         shimmerFrameLayoutSliderTop.startShimmer();
-
 
 
     }
