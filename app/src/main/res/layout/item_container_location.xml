@@ -54,19 +54,20 @@
             android:id="@+id/view2"
             android:layout_width="match_parent"
             android:layout_height="70dp"
-            android:background="#d6000000"
+            android:background="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent" />
 
         <TextView
             android:id="@+id/txtTitle"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
+            android:layout_marginTop="5dp"
             android:layout_marginEnd="10dp"
             android:alpha="0.8"
             android:fontFamily="@font/iransans"
             android:text="test"
-            android:textColor="@color/white"
-            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/view2" />
@@ -117,7 +118,7 @@
             android:alpha="0.5"
             android:fontFamily="@font/iransans"
             android:text="0 نقد "
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="10sp"
             app:layout_constraintBottom_toBottomOf="@+id/linearLayout"
             app:layout_constraintEnd_toStartOf="@+id/linearLayout"
@@ -131,7 +132,7 @@
             android:alpha="0.5"
             android:fontFamily="@font/iransans"
             android:text="test"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
