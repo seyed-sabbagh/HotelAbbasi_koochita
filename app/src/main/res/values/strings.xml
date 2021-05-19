@@ -33,5 +33,8 @@
     <string name="ic_bookmark_web">"\uE0DD"</string>
     <string name="noe_otagh">نوع اتاق</string>
     <string name="ic_Image_web">"\uE0B1"</string>
+    <string name="ic_videClip_web">"\uE1F2"</string>
+    <string name="ic_support_web">"\uE1F4"</string>
+    <string name="ic_360_web">"\ue1f3"</string>
     <string name="sample1">سؤلات خود را بپرسید تا با کمک دوستانتان آگاهانه‌تر سفر کنید. همچنین می‌توانید با پاسخ یه سؤالات دوستانتان علاوه بر دریافت امتیاز، اطلاعات خود را به اشتراک بگذارید.</string>
 </resources>

@@ -11,7 +11,6 @@
     android:paddingBottom="15dp">
 
     <ImageView
-
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginStart="7dp"
@@ -81,7 +80,46 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/viesws" />
 
-    <Button
+
+    <RelativeLayout
+        android:id="@+id/materialButton"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:background="@drawable/transparent_bg_normal"
+        android:backgroundTint="@color/black"
+        android:text="افضودن ویدیٔو"
+        app:layout_constraintEnd_toStartOf="@+id/materialButton2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/viesws" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/iransans"
+            android:gravity="center"
+            android:text="افزودن ویدیو"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtImgVideoVlip"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:text="@string/ic_videClip_web"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+    </RelativeLayout>
+   <!-- <Button
         android:id="@+id/materialButton"
         android:layout_width="0dp"
         android:layout_height="40dp"
@@ -98,8 +136,8 @@
         app:layout_constraintEnd_toStartOf="@+id/materialButton2"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/viesws" />
-
-    <com.google.android.material.button.MaterialButton
+-->
+    <RelativeLayout
         android:id="@+id/materialButton2"
         android:layout_width="0dp"
         android:layout_height="40dp"
@@ -108,15 +146,82 @@
         android:layout_marginEnd="2dp"
         android:layout_marginBottom="2dp"
         android:background="@drawable/transparent_bg_normal"
-        android:backgroundTint="@android:color/white"
-        android:drawableEnd="@drawable/ic_image"
-        android:text="افضودن عکس"
+        android:backgroundTint="@color/black"
         android:textColor="@color/black"
         app:backgroundTint="@color/black"
         app:cornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/materialButton"
-        app:layout_constraintTop_toBottomOf="@+id/viesws" />
+        app:layout_constraintTop_toBottomOf="@+id/viesws" >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/iransans"
+            android:gravity="center"
+            android:text="افزودن عکس"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TxtImageWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text="@string/ic_Image_web"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/materialButton3"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/transparent_bg_normal"
+        android:backgroundTint="@color/black"
+        android:text="افضودن ویدٔیو ۳۶۰"
+        android:textColor="@color/black"
+        app:backgroundTint="@color/black"
+        app:cornerRadius="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/materialButton4"
+        app:layout_constraintTop_toBottomOf="@+id/materialButton2">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/iransans"
+            android:gravity="center"
+            android:text="افزودن ویدیو ۳۶۰"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/txtImgVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="15dp"
+            android:gravity="center"
+            android:text="@string/ic_360_web"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+    </RelativeLayout>
+
+<!--
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/materialButton3"
@@ -134,6 +239,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/materialButton4"
         app:layout_constraintTop_toBottomOf="@+id/materialButton2" />
+-->
 
     <RelativeLayout
         android:id="@+id/materialButton4"
@@ -146,38 +252,50 @@
         app:layout_constraintEnd_toStartOf="@+id/materialButton3"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/materialButton">
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"/>
 
         <TextView
-            android:id="@+id/TxtImageWeb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="false"
+            android:layout_alignParentTop="false"
+            android:layout_marginStart="20dp"
+            android:layout_alignParentStart="true"
+            android:fontFamily="@font/iransans"
+            android:gravity="center"
+            android:text="افزودن دوست"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/TxtSupport"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_alignParentEnd="true"
             android:layout_marginEnd="15dp"
             android:gravity="center"
-            android:text="@string/ic_Image_web"
+            android:text="@string/ic_support_web"
             android:textAlignment="center"
             android:textColor="@color/black"
             android:textSize="30sp" />
     </RelativeLayout>
+<!--
 
-    <!--    <com.google.android.material.button.MaterialButton-->
-    <!--        android:id="@+id/materialButton4"-->
-    <!--        android:layout_width="0dp"-->
-    <!--        android:layout_height="40dp"-->
-    <!--        android:layout_margin="2dp"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:background="@drawable/transparent_bg_normal"-->
-    <!--        android:backgroundTint="@android:color/white"-->
-    <!--        android:drawableEnd="@drawable/ic_baseline_support_agent_24"-->
-    <!--        android:text="افضودن دوست"-->
-    <!--        android:textColor="@color/black"-->
-    <!--        app:backgroundTint="@color/black"-->
-    <!--        app:cornerRadius="20dp"-->
-    <!--        app:layout_constraintEnd_toStartOf="@+id/materialButton3"-->
-    <!--        app:layout_constraintStart_toStartOf="parent"-->
-    <!--        app:layout_constraintTop_toBottomOf="@+id/materialButton" />-->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/materialButton4"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_margin="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/transparent_bg_normal"
+            android:backgroundTint="@android:color/white"
+            android:drawableEnd="@drawable/ic_baseline_support_agent_24"
+            android:text="افضودن دوست"
+            android:textColor="@color/black"
+            app:backgroundTint="@color/black"
+            app:cornerRadius="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/materialButton3"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
