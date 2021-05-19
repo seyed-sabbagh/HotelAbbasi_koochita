@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -39,14 +38,15 @@ import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
 
+
     ViewPager2 JazebeViewPager;
     ViewPager2 locationViewPager;
     ViewPager2 ResturanViewPager;
     TextView ImgCall;
     ViewPager2 EghamatViewPager;
-    Typeface typeface;
+    Typeface typeface, typeface2;
     ConstraintLayout ConstVideo, constraintLayout, cont_list, constraintLayoutImageSlider;
-    TextView TxtImageWeb, TxtBag, TxtBookmark, Txtstar, Txtstar2, Txtstar3, Txtstar4, Txtstar5, imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
+    TextView TxtImageWeb, TxtSupport, txtImgVideoVlip, TxtBag, TxtBookmark, txtImgVideo, Txtstar, Txtstar2, Txtstar3, Txtstar4, Txtstar5, imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
     ShimmerFrameLayout shimmerFrameLayoutSliderTop, shimmer_list;
     LinearLayout shimerLayout_SliderTop, shimmer_layout_list;
     View ViewView;
@@ -63,6 +63,8 @@ public class MainActivity extends AppCompatActivity {
         Txtstar = findViewById(R.id.Txtstar);
         TxtImageWeb = findViewById(R.id.TxtImageWeb);
         TxtBag = findViewById(R.id.TxtBag);
+        txtImgVideo = findViewById(R.id.txtImgVideo);
+        txtImgVideoVlip = findViewById(R.id.txtImgVideoVlip);
         Txtstar2 = findViewById(R.id.Txtstar2);
         Txtstar3 = findViewById(R.id.Txtstar3);
         TxtBookmark = findViewById(R.id.TxtBookmark);
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         cardView = findViewById(R.id.imageVsiew666);
         imageView2002 = findViewById(R.id.TxtLocation);
         ViewView = findViewById(R.id.ViewView);
+        TxtSupport = findViewById(R.id.TxtSupport);
         txtHotelTitle = findViewById(R.id.HotelTitle);
         txtDescription = findViewById(R.id.txtDescription);
         txtSite = findViewById(R.id.Site);
@@ -98,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
 
         scrollView.getViewTreeObserver().addOnScrollChangedListener(() -> {
             int i = (int) ViewView.getY();
-            int i2 = (int) scrollView.getScrollY();
+            int i2 = scrollView.getScrollY();
             Log.d("TAG", "onScrollChange: " + i + " " + i2);
 
             if (scrollView.getScrollY() > ViewView.getY()) {
@@ -118,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 //                constraintLayout.setLayoutParams(l);
 
 
-            int v1 = (int) scrollView.getScrollX();
+            int v1 = scrollView.getScrollX();
 
 
 //
@@ -133,15 +136,12 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        ConstVideo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        ConstVideo.setOnClickListener(v -> {
 
-                String url = "https://koochitatv.com/video/show/8uU6LhcBap";
-                Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(url));
-                startActivity(i);
-            }
+            String url = "https://koochitatv.com/video/show/8uU6LhcBap";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
         });
 
     }
@@ -149,6 +149,7 @@ public class MainActivity extends AppCompatActivity {
     private void TypeFace() {
 
         typeface = Typeface.createFromAsset(getAssets(), "shazdemosafer.ttf");
+        typeface2 = Typeface.createFromAsset(getAssets(), "Shazdemosafer2.ttf");
         accelerate.setTypeface(typeface);
         ImgCall.setTypeface(typeface);
         imageView2002.setTypeface(typeface);
@@ -157,9 +158,12 @@ public class MainActivity extends AppCompatActivity {
         TxtBag.setTypeface(typeface);
         Txtstar3.setTypeface(typeface);
         Txtstar4.setTypeface(typeface);
+        txtImgVideo.setTypeface(typeface);
         Txtstar5.setTypeface(typeface);
         TxtBookmark.setTypeface(typeface);
         TxtImageWeb.setTypeface(typeface);
+        TxtSupport.setTypeface(typeface);
+        txtImgVideoVlip.setTypeface(typeface);
     }
 
     private void Visibility() {
