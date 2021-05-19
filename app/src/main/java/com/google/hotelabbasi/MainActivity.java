@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 EghamatViewPager;
     Typeface typeface;
     ConstraintLayout ConstVideo, constraintLayout, cont_list, constraintLayoutImageSlider;
-    TextView TxtImageWeb, TxtBag,TxtBookmark, Txtstar ,Txtstar2 ,Txtstar3 ,Txtstar4 ,Txtstar5 , imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
+    TextView TxtImageWeb, TxtBag, TxtBookmark, Txtstar, Txtstar2, Txtstar3, Txtstar4, Txtstar5, imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
     ShimmerFrameLayout shimmerFrameLayoutSliderTop, shimmer_list;
     LinearLayout shimerLayout_SliderTop, shimmer_layout_list;
     View ViewView;
@@ -60,14 +60,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ConstVideo = findViewById(R.id.ConstVideo);
-        Txtstar=findViewById(R.id.Txtstar);
-        TxtImageWeb=findViewById(R.id.TxtImageWeb);
-        TxtBag= findViewById(R.id.TxtBag);
-        Txtstar2=findViewById(R.id.Txtstar2);
-        Txtstar3=findViewById(R.id.Txtstar3);
-        TxtBookmark=findViewById(R.id.TxtBookmark);
-        Txtstar4=findViewById(R.id.Txtstar4);
-        Txtstar5=findViewById(R.id.Txtstar5);
+        Txtstar = findViewById(R.id.Txtstar);
+        TxtImageWeb = findViewById(R.id.TxtImageWeb);
+        TxtBag = findViewById(R.id.TxtBag);
+        Txtstar2 = findViewById(R.id.Txtstar2);
+        Txtstar3 = findViewById(R.id.Txtstar3);
+        TxtBookmark = findViewById(R.id.TxtBookmark);
+        Txtstar4 = findViewById(R.id.Txtstar4);
+        Txtstar5 = findViewById(R.id.Txtstar5);
         constraintLayoutImageSlider = findViewById(R.id.ConstraintLayout_image_slider_top_mainactivity);
         shimmerFrameLayoutSliderTop = findViewById(R.id.shimmer_view_container);
         shimerLayout_SliderTop = findViewById(R.id.shimmer_layout_SliderTop);
@@ -96,34 +96,29 @@ public class MainActivity extends AppCompatActivity {
 
         constraintLayout = findViewById(R.id.accelerate);
 
-        scrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
-            @Override
-            public void onScrollChanged() {
-                int i = (int) ViewView.getY();
-                int i2 = (int) scrollView.getScrollY();
-                Log.d("TAG", "onScrollChange: " + i + " " + i2);
+        scrollView.getViewTreeObserver().addOnScrollChangedListener(() -> {
+            int i = (int) ViewView.getY();
+            int i2 = (int) scrollView.getScrollY();
+            Log.d("TAG", "onScrollChange: " + i + " " + i2);
 
-                if (scrollView.getScrollY() > ViewView.getY()) {
+            if (scrollView.getScrollY() > ViewView.getY()) {
 
-                    relativeLayout.setVisibility(View.VISIBLE);
+                relativeLayout.setVisibility(View.VISIBLE);
 
-                }
-                if (scrollView.getScrollY() < ViewView.getY()) {
-                    relativeLayout.setVisibility(View.GONE);
-                }
+            }
+            if (scrollView.getScrollY() < ViewView.getY()) {
+                relativeLayout.setVisibility(View.GONE);
             }
         });
 
-        scrollView.setOnScrollChangeListener(new View.OnScrollChangeListener() {
-            @Override
-            public void onScrollChange(View v, int scrollX, int scrollY, int oldScrollX, int oldScrollY) {
+        scrollView.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
 //
 //                ConstraintLayout.LayoutParams l = (ConstraintLayout.LayoutParams) constraintLayout.getLayoutParams();
 //                l.setMargins(0,90,0,0);
 //                constraintLayout.setLayoutParams(l);
 
 
-                int v1 = (int) scrollView.getScrollX();
+            int v1 = (int) scrollView.getScrollX();
 
 
 //
@@ -136,7 +131,6 @@ public class MainActivity extends AppCompatActivity {
 //                }, 2000);
 
 
-            }
         });
 
         ConstVideo.setOnClickListener(new View.OnClickListener() {
