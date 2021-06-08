@@ -62,6 +62,7 @@
             android:id="@+id/Txtstar3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:baselineAligned="false"
             android:text="@string/ic_star_web"
             android:textColor="@color/greean_web"
             android:textSize="20sp" />
@@ -229,7 +230,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"
         android:fontFamily="@font/iransans"
-        android:text=" 03132226010 "
+        android:text=" 03132226010"
         android:textColor="@android:color/darker_gray"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/TxtCall2"
