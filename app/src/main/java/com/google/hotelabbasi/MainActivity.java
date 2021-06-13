@@ -60,12 +60,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         FindViewByID();
         startShimmer();
-
-
         jsonParseGetInfo();
         ImageSliderTop();
         jazebeViewPager();
@@ -75,8 +71,22 @@ public class MainActivity extends AppCompatActivity {
         ResturanViewPager();
         compositePageTransformer();
         TypeFace();
+        ToolbarHide();
+        VideoPlayerClickListener();
+    }
 
-        constraintLayout = findViewById(R.id.accelerate);
+    private void VideoPlayerClickListener() {
+        ConstVideo.setOnClickListener(v -> {
+
+            String url = "https://koochitatv.com/video/show/8uU6LhcBap";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+        });
+
+    }
+
+    private void ToolbarHide() {
 
         scrollView.getViewTreeObserver().addOnScrollChangedListener(() -> {
             int i = (int) ViewView.getY();
@@ -92,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
                 relativeLayout.setVisibility(View.GONE);
             }
         });
+
 
         scrollView.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
 //
@@ -115,13 +126,6 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        ConstVideo.setOnClickListener(v -> {
-
-            String url = "https://koochitatv.com/video/show/8uU6LhcBap";
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            startActivity(i);
-        });
 
     }
 
@@ -211,6 +215,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void FindViewByID() {
         ConstVideo = findViewById(R.id.ConstVideo);
+        constraintLayout = findViewById(R.id.accelerate);
         ImgRateViewOne = findViewById(R.id.ImgRateViewOne);
         ImgRateViewOne2 = findViewById(R.id.ImgRateViewOne2);
         txtFlot2 = findViewById(R.id.txtFlot2);
