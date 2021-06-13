@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -25,10 +24,11 @@ import com.android.volley.toolbox.Volley;
 import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.google.gson.Gson;
+import com.google.hotelabbasi.jsonschema2pojo.PrayTimeClassGetInfo;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -37,8 +37,6 @@ import java.util.List;
 import cz.msebera.android.httpclient.Header;
 
 public class MainActivity extends AppCompatActivity {
-
-
     ViewPager2 JazebeViewPager;
     ViewPager2 locationViewPager;
     ViewPager2 ResturanViewPager;
@@ -46,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     ViewPager2 EghamatViewPager;
     Typeface typeface, typeface2;
     ConstraintLayout ConstVideo, constraintLayout, cont_list, constraintLayoutImageSlider;
-    TextView TxtImageWeb, TxtSupport, txtImgVideoVlip, TxtBag, TxtBookmark, txtImgVideo, Txtstar, Txtstar2, Txtstar3, Txtstar4, Txtstar5, imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
+    TextView txtAddress, txtPhonNumber, TxtImageWeb, TxtSupport, txtImgVideoVlip, TxtBag, TxtBookmark, txtImgVideo, Txtstar, Txtstar2, Txtstar3, Txtstar4, Txtstar5, imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
     ShimmerFrameLayout shimmerFrameLayoutSliderTop, shimmer_list;
     LinearLayout shimerLayout_SliderTop, shimmer_layout_list;
     View ViewView;
@@ -59,36 +57,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ConstVideo = findViewById(R.id.ConstVideo);
-        Txtstar = findViewById(R.id.Txtstar);
-        TxtImageWeb = findViewById(R.id.TxtImageWeb);
-        TxtBag = findViewById(R.id.TxtBag);
-        txtImgVideo = findViewById(R.id.txtImgVideo);
-        txtImgVideoVlip = findViewById(R.id.txtImgVideoVlip);
-        Txtstar2 = findViewById(R.id.Txtstar2);
-        Txtstar3 = findViewById(R.id.Txtstar3);
-        TxtBookmark = findViewById(R.id.TxtBookmark);
-        Txtstar4 = findViewById(R.id.Txtstar4);
-        Txtstar5 = findViewById(R.id.Txtstar5);
-        constraintLayoutImageSlider = findViewById(R.id.ConstraintLayout_image_slider_top_mainactivity);
-        shimmerFrameLayoutSliderTop = findViewById(R.id.shimmer_view_container);
-        shimerLayout_SliderTop = findViewById(R.id.shimmer_layout_SliderTop);
-        relativeLayout = findViewById(R.id.rel);
-        accelerate = findViewById(R.id.accelerate00);
-        cardView = findViewById(R.id.imageVsiew666);
-        imageView2002 = findViewById(R.id.TxtLocation);
-        ViewView = findViewById(R.id.ViewView);
-        TxtSupport = findViewById(R.id.TxtSupport);
-        txtHotelTitle = findViewById(R.id.HotelTitle);
-        txtDescription = findViewById(R.id.txtDescription);
-        txtSite = findViewById(R.id.Site);
-        scrollView = findViewById(R.id.scrollViewMainActivity);
-        mqueue = Volley.newRequestQueue(this);
-        ImgCall = findViewById(R.id.TxtCall2);
 
+
+        FindViewByID();
         startShimmer();
 
-        jsonParse();
+        jsonParseGetInfo();
         ImageSliderTop();
         jazebeViewPager();
         EghamatViewPager();
@@ -102,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         scrollView.getViewTreeObserver().addOnScrollChangedListener(() -> {
             int i = (int) ViewView.getY();
             int i2 = scrollView.getScrollY();
-            Log.d("TAG", "onScrollChange: " + i + " " + i2);
+//            Log.d("TAG", "onScrollChange: " + i + " " + i2);
 
             if (scrollView.getScrollY() > ViewView.getY()) {
 
@@ -146,6 +120,38 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void FindViewByID() {
+        ConstVideo = findViewById(R.id.ConstVideo);
+        Txtstar = findViewById(R.id.Txtstar);
+        TxtImageWeb = findViewById(R.id.TxtImageWeb);
+        TxtBag = findViewById(R.id.TxtBag);
+        txtPhonNumber = findViewById(R.id.txtPhonNumber);
+        txtAddress = findViewById(R.id.txtAddress);
+        txtImgVideo = findViewById(R.id.txtImgVideo);
+        txtImgVideoVlip = findViewById(R.id.txtImgVideoVlip);
+        Txtstar2 = findViewById(R.id.Txtstar2);
+        Txtstar3 = findViewById(R.id.Txtstar3);
+        TxtBookmark = findViewById(R.id.TxtBookmark);
+        Txtstar4 = findViewById(R.id.Txtstar4);
+        Txtstar5 = findViewById(R.id.Txtstar5);
+        constraintLayoutImageSlider = findViewById(R.id.ConstraintLayout_image_slider_top_mainactivity);
+        shimmerFrameLayoutSliderTop = findViewById(R.id.shimmer_view_container);
+        shimerLayout_SliderTop = findViewById(R.id.shimmer_layout_SliderTop);
+        relativeLayout = findViewById(R.id.rel);
+        accelerate = findViewById(R.id.accelerate00);
+        cardView = findViewById(R.id.imageVsiew666);
+        imageView2002 = findViewById(R.id.TxtLocation);
+        ViewView = findViewById(R.id.ViewView);
+        TxtSupport = findViewById(R.id.TxtSupport);
+        txtHotelTitle = findViewById(R.id.HotelTitle);
+        txtDescription = findViewById(R.id.txtDescription);
+        txtSite = findViewById(R.id.Site);
+        scrollView = findViewById(R.id.scrollViewMainActivity);
+        mqueue = Volley.newRequestQueue(this);
+        ImgCall = findViewById(R.id.TxtCall2);
+
+    }
+
     private void TypeFace() {
 
         typeface = Typeface.createFromAsset(getAssets(), "shazdemosafer.ttf");
@@ -180,46 +186,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private void jsonParse() {
-        String url = "http://192.168.0.163/data.json";
-
+    private void jsonParseGetInfo() {
+        String url = "http://185.239.106.26/api/place/getInfo/%D9%87%D8%AA%D9%84_%D8%B9%D8%A8%D8%A7%D8%B3%DB%8C";
         AsyncHttpClient client = new AsyncHttpClient();
-
         client.get(url, new JsonHttpResponseHandler() {
-
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 super.onSuccess(statusCode, headers, response);
+                Gson gson = new Gson();
+                PrayTimeClassGetInfo pray = gson.fromJson(response.toString(), PrayTimeClassGetInfo.class);
+                String JsontxtPhonNumber = pray.getPhone();
+                String JsontxtHotelTitle = pray.getName();
+                String JsontxtSite = pray.getSite();
+                String JsontxtDescription = pray.getDescription();
+                String JsontxtAddress = pray.getAddress();
 
+                txtAddress.setText(JsontxtAddress);
+                txtDescription.setText(JsontxtDescription);
+                txtPhonNumber.setText(JsontxtPhonNumber);
+                txtHotelTitle.setText(JsontxtHotelTitle);
+                txtSite.setText(JsontxtSite);
+                Visibility();
 
-                try {
-//                    String str = "";
-//                    JSONObject jsonObject = new JSONObject(str);
-                    String HotelTitle = response.getString("keyword");
-                    String HotelDescription = response.getString("description");
-                    String Site = response.getString("site");
-
-
-                    txtDescription.setText(HotelDescription);
-                    txtHotelTitle.setText(HotelTitle);
-                    txtSite.setText(Site);
-//                    Log.d("TAG", "onResponse: " + HotelDescription);
-
-                    Visibility();
-
-
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-
-            }
-
-
-            @Override
-            public void onFailure(int statusCode, Header[] headers, Throwable throwable, JSONObject errorResponse) {
-                super.onFailure(statusCode, headers, throwable, errorResponse);
             }
         });
+
     }
 
 
