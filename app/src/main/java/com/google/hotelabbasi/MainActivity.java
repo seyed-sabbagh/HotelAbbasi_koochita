@@ -2,10 +2,12 @@ package com.google.hotelabbasi;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
@@ -34,6 +36,8 @@ import com.google.hotelabbasi.jsonschema2pojo.PrayTimeClassGetInfo;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
+import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -51,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
     ConstraintLayout layout_emtiyaz_karbar, ConstVideo, constraintLayout, cont_list, constraintLayoutImageSlider;
     TextView txtFlot1, txtFlot2, txtflot3, txtflot4, txtFlot5, txtAddress, txtPhonNumber, TxtImageWeb, TxtSupport, txtImgVideoVlip, TxtBag, TxtBookmark, txtImgVideo, Txtstar, Txtstar2, Txtstar3, Txtstar4, Txtstar5, imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
     ShimmerFrameLayout shimmerFrameLayoutSliderTop, shimmer_list;
-    LinearLayout ImgRateViewOne, ImgRateViewOne2, ImgRateViewTwo, ImgRateViewTwo2, ImgRateViewThree, ImgRateViewThree2, ImgRateViewFoure, ImgRateViewFoure2, ImgRateViewFive, ImgRateViewFive2, shimerLayout_SliderTop, shimmer_layout_list;
+    LinearLayout line1, ImgRateViewOne, ImgRateViewOne2, ImgRateViewTwo, ImgRateViewTwo2, ImgRateViewThree, ImgRateViewThree2, ImgRateViewFoure, ImgRateViewFoure2, ImgRateViewFive, ImgRateViewFive2, shimerLayout_SliderTop, shimmer_layout_list;
     View ViewView;
     ScrollView scrollView;
     RelativeLayout relativeLayout;
@@ -64,13 +68,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         FindViewByID();
 
-        layout_emtiyaz_karbar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                showBottomSheetDialogEmtiyazKarbar();
-
-            }
-        });
+        layout_emtiyaz_karbar.setOnClickListener(v -> showBottomSheetDialogEmtiyazKarbar());
 
 
         startShimmer();
@@ -80,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         EghamatViewPager();
         JsonParseGetRate();
         locationViewPager();
+        JsonParsgetFeatures();
         ResturanViewPager();
         compositePageTransformer();
         TypeFace();
@@ -235,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void FindViewByID() {
         layout_emtiyaz_karbar = findViewById(R.id.layout_emtiyaz_karbar);
+        line1 = findViewById(R.id.line3);
         ConstVideo = findViewById(R.id.ConstVideo);
         constraintLayout = findViewById(R.id.accelerate);
         ImgRateViewOne = findViewById(R.id.ImgRateViewOne);
@@ -315,6 +315,57 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void c() {
+        String url = "http://185.239.106.26/api/place/getFeatures/606ddc223f04952c46589811";
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(url, new JsonHttpResponseHandler() {
+
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                try {
+                    JSONArray allFeatures = response.getJSONArray("allFeatures");
+
+                    for (int i = 0; i < allFeatures.length(); i++) {
+                        JSONObject object = allFeatures.getJSONObject(i);
+
+                        String tt2 = object.getString("name");
+
+                        Log.d("TAG", "onSuccess: " + tt2);
+
+                        JSONArray jsonArray = object.getJSONArray("features");
+                        for (int j = 0; j < jsonArray.length(); j++) {
+                            JSONObject object1 = jsonArray.getJSONObject(j);
+                            String tt = object1.getString("type");
+
+                        }
+
+
+                        for (int j = 0; j < 1; j++) {
+                            Typeface typeface = Typeface.createFromAsset(getAssets(), "iransans.ttf");
+                            TextView tv = new TextView(MainActivity.this);
+                            tv.setText(tt2);
+                            tv.setTextSize(20);
+                            line1.addView(tv);
+                            tv.setTypeface(typeface);
+                        }
+
+                    }
+
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            @Override
+            public void onFailure(int statusCode, Header[] headers, String responseString, Throwable throwable) {
+                super.onFailure(statusCode, headers, responseString, throwable);
+                Log.d("TAG", "onFailure: " + throwable);
+            }
+        });
+
+    }
 
     private void jsonParseGetInfo() {
         String url = "http://185.239.106.26/api/place/getInfo/%D9%87%D8%AA%D9%84_%D8%B9%D8%A8%D8%A7%D8%B3%DB%8C";
