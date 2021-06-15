@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
     TextView ImgCall;
     ViewPager2 EghamatViewPager;
     Typeface typeface, typeface2;
-    ConstraintLayout ConstVideo, constraintLayout, cont_list, constraintLayoutImageSlider;
+    ConstraintLayout layout_emtiyaz_karbar, ConstVideo, constraintLayout, cont_list, constraintLayoutImageSlider;
     TextView txtFlot1, txtFlot2, txtflot3, txtflot4, txtFlot5, txtAddress, txtPhonNumber, TxtImageWeb, TxtSupport, txtImgVideoVlip, TxtBag, TxtBookmark, txtImgVideo, Txtstar, Txtstar2, Txtstar3, Txtstar4, Txtstar5, imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
     ShimmerFrameLayout shimmerFrameLayoutSliderTop, shimmer_list;
     LinearLayout ImgRateViewOne, ImgRateViewOne2, ImgRateViewTwo, ImgRateViewTwo2, ImgRateViewThree, ImgRateViewThree2, ImgRateViewFoure, ImgRateViewFoure2, ImgRateViewFive, ImgRateViewFive2, shimerLayout_SliderTop, shimmer_layout_list;
@@ -61,6 +63,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         FindViewByID();
+
+        layout_emtiyaz_karbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomSheetDialogEmtiyazKarbar();
+
+            }
+        });
+
+
         startShimmer();
         jsonParseGetInfo();
         ImageSliderTop();
@@ -73,6 +85,13 @@ public class MainActivity extends AppCompatActivity {
         TypeFace();
         ToolbarHide();
         VideoPlayerClickListener();
+
+
+    }
+
+    private void showBottomSheetDialogEmtiyazKarbar() {
+        BottomSheet bottomSheet = new BottomSheet();
+        bottomSheet.show(getSupportFragmentManager(), "TAG");
     }
 
     private void VideoPlayerClickListener() {
@@ -86,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     private void ToolbarHide() {
 
         scrollView.getViewTreeObserver().addOnScrollChangedListener(() -> {
@@ -214,6 +234,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void FindViewByID() {
+        layout_emtiyaz_karbar = findViewById(R.id.layout_emtiyaz_karbar);
         ConstVideo = findViewById(R.id.ConstVideo);
         constraintLayout = findViewById(R.id.accelerate);
         ImgRateViewOne = findViewById(R.id.ImgRateViewOne);
