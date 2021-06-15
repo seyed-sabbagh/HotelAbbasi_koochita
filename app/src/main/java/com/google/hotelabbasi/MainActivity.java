@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    private void c() {
+    private void JsonParsgetFeatures() {
         String url = "http://185.239.106.26/api/place/getFeatures/606ddc223f04952c46589811";
         AsyncHttpClient client = new AsyncHttpClient();
         client.get(url, new JsonHttpResponseHandler() {
