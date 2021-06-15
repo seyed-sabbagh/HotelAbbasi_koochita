@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/layout_emtiyaz_karbar"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="20dp"
-    android:background="@drawable/transparent_bg_bordered_bacgraond_activity">
-
+    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+    android:paddingBottom="20dp">
 
     <TextView
         android:id="@+id/textView16"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
-        android:textStyle="bold"
         android:fontFamily="@font/iransans"
         android:text="@string/emtiyaz_karbaran"
         android:textColor="#0076a3"
         android:textSize="20sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,16 +41,53 @@
         app:layout_constraintStart_toEndOf="@+id/textView16"
         app:layout_constraintTop_toTopOf="@+id/textView16" />
 
-
-    <RatingBar
+    <LinearLayout
         android:id="@+id/ratingBar"
-        android:layout_width="240dp"
-        android:layout_height="wrap_content"
-        android:numStars="5"
-        android:stepSize="1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView16" />
+        app:layout_constraintTop_toBottomOf="@+id/textView16">
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_emty_star" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_full_star" />
+
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_full_star" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_full_star" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:src="@drawable/ic_full_star" />
+
+    </LinearLayout>
+
+    <!--    <RatingBar-->
+    <!--        android:id="@+id/ratingBar"-->
+    <!--        android:layout_width="240dp"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:numStars="5"-->
+    <!--        android:stepSize="1"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/textView16" />-->
 
 
     <TextView
@@ -65,7 +103,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/txtFlot5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/iransans"
@@ -77,18 +115,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view2" />
 
-    <View
+    <LinearLayout
         android:id="@+id/view2"
         android:layout_width="200dp"
         android:layout_height="13dp"
-        android:background="#e5e5e5"
         app:layout_constraintBottom_toBottomOf="@+id/textView27"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView27" />
+        app:layout_constraintTop_toTopOf="@+id/textView27">
+
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewFive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:background="#e5e5e5"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewFive2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:background="@color/greean_web"
+            android:orientation="horizontal" />
+
+    </LinearLayout>
+
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/txtflot4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/iransans"
@@ -96,8 +153,8 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/view3"
-        app:layout_constraintEnd_toEndOf="@+id/textView28"
-        app:layout_constraintStart_toStartOf="@+id/textView28"
+        app:layout_constraintEnd_toEndOf="@+id/txtFlot5"
+        app:layout_constraintStart_toStartOf="@+id/txtFlot5"
         app:layout_constraintTop_toTopOf="@+id/view3" />
 
     <TextView
@@ -112,7 +169,7 @@
         app:layout_constraintStart_toEndOf="@+id/view3"
         app:layout_constraintTop_toTopOf="@+id/view3" />
 
-    <View
+    <LinearLayout
         android:id="@+id/view3"
         android:layout_width="200dp"
         android:layout_height="13dp"
@@ -120,17 +177,55 @@
         android:background="#4dc7bc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintTop_toBottomOf="@+id/view2">
 
-    <View
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewFoure"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:background="#e5e5e5"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewFoure2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:background="@color/greean_web"
+            android:orientation="horizontal" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/view4"
         android:layout_width="200dp"
         android:layout_height="13dp"
         android:layout_marginTop="20dp"
-        android:background="#e5e5e5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view3" />
+        app:layout_constraintTop_toBottomOf="@+id/view3">
+
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewThree"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:background="#e5e5e5"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewThree2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:background="@color/greean_web"
+            android:orientation="horizontal" />
+
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -145,6 +240,7 @@
         app:layout_constraintTop_toTopOf="@+id/view4" />
 
     <TextView
+        android:id="@+id/txtflot3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/iransans"
@@ -156,7 +252,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view4" />
 
-    <View
+    <LinearLayout
         android:id="@+id/view5"
         android:layout_width="200dp"
         android:layout_height="13dp"
@@ -164,7 +260,27 @@
         android:background="#e5e5e5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view4" />
+        app:layout_constraintTop_toBottomOf="@+id/view4">
+
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewTwo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:background="#e5e5e5"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewTwo2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:background="@color/greean_web"
+            android:orientation="horizontal" />
+
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -179,7 +295,7 @@
         app:layout_constraintTop_toTopOf="@+id/view5" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/txtFlot2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/iransans"
@@ -191,15 +307,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view5" />
 
-    <View
+    <LinearLayout
         android:id="@+id/view6"
         android:layout_width="200dp"
         android:layout_height="13dp"
         android:layout_marginTop="20dp"
-        android:background="#e5e5e5"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view5" />
+        app:layout_constraintTop_toBottomOf="@+id/view5">
+
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewOne"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.7"
+            android:background="#e5e5e5"
+            android:orientation="vertical" />
+
+        <LinearLayout
+            android:id="@+id/ImgRateViewOne2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.3"
+            android:background="@color/greean_web"
+            android:orientation="horizontal" />
+
+    </LinearLayout>
+
 
     <TextView
         android:layout_width="wrap_content"
@@ -214,6 +349,7 @@
         app:layout_constraintTop_toTopOf="@+id/view6" />
 
     <TextView
+        android:id="@+id/txtFlot1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/iransans"

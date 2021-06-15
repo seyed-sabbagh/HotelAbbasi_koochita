@@ -1,16 +1,20 @@
 package com.google.hotelabbasi;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.constraintlayout.widget.ConstraintLayout;
@@ -25,6 +29,7 @@ import com.denzcoskun.imageslider.ImageSlider;
 import com.denzcoskun.imageslider.models.SlideModel;
 import com.facebook.shimmer.ShimmerFrameLayout;
 import com.google.gson.Gson;
+import com.google.hotelabbasi.jsonschema2pojo.GetRate.PrayTimeClassGetRate;
 import com.google.hotelabbasi.jsonschema2pojo.PrayTimeClassGetInfo;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
@@ -43,10 +48,10 @@ public class MainActivity extends AppCompatActivity {
     TextView ImgCall;
     ViewPager2 EghamatViewPager;
     Typeface typeface, typeface2;
-    ConstraintLayout ConstVideo, constraintLayout, cont_list, constraintLayoutImageSlider;
-    TextView txtAddress, txtPhonNumber, TxtImageWeb, TxtSupport, txtImgVideoVlip, TxtBag, TxtBookmark, txtImgVideo, Txtstar, Txtstar2, Txtstar3, Txtstar4, Txtstar5, imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
+    ConstraintLayout layout_emtiyaz_karbar, ConstVideo, constraintLayout, cont_list, constraintLayoutImageSlider;
+    TextView txtFlot1, txtFlot2, txtflot3, txtflot4, txtFlot5, txtAddress, txtPhonNumber, TxtImageWeb, TxtSupport, txtImgVideoVlip, TxtBag, TxtBookmark, txtImgVideo, Txtstar, Txtstar2, Txtstar3, Txtstar4, Txtstar5, imageView2002, txtHotelTitle, txtDescription, txtSite, accelerate;
     ShimmerFrameLayout shimmerFrameLayoutSliderTop, shimmer_list;
-    LinearLayout shimerLayout_SliderTop, shimmer_layout_list;
+    LinearLayout ImgRateViewOne, ImgRateViewOne2, ImgRateViewTwo, ImgRateViewTwo2, ImgRateViewThree, ImgRateViewThree2, ImgRateViewFoure, ImgRateViewFoure2, ImgRateViewFive, ImgRateViewFive2, shimerLayout_SliderTop, shimmer_layout_list;
     View ViewView;
     ScrollView scrollView;
     RelativeLayout relativeLayout;
@@ -57,21 +62,51 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
         FindViewByID();
-        startShimmer();
 
+        layout_emtiyaz_karbar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showBottomSheetDialogEmtiyazKarbar();
+
+            }
+        });
+
+
+        startShimmer();
         jsonParseGetInfo();
         ImageSliderTop();
         jazebeViewPager();
         EghamatViewPager();
+        JsonParseGetRate();
         locationViewPager();
         ResturanViewPager();
         compositePageTransformer();
         TypeFace();
+        ToolbarHide();
+        VideoPlayerClickListener();
 
-        constraintLayout = findViewById(R.id.accelerate);
+
+    }
+
+    private void showBottomSheetDialogEmtiyazKarbar() {
+        BottomSheet bottomSheet = new BottomSheet();
+        bottomSheet.show(getSupportFragmentManager(), "TAG");
+    }
+
+    private void VideoPlayerClickListener() {
+        ConstVideo.setOnClickListener(v -> {
+
+            String url = "https://koochitatv.com/video/show/8uU6LhcBap";
+            Intent i = new Intent(Intent.ACTION_VIEW);
+            i.setData(Uri.parse(url));
+            startActivity(i);
+        });
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private void ToolbarHide() {
 
         scrollView.getViewTreeObserver().addOnScrollChangedListener(() -> {
             int i = (int) ViewView.getY();
@@ -87,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 relativeLayout.setVisibility(View.GONE);
             }
         });
+
 
         scrollView.setOnScrollChangeListener((v, scrollX, scrollY, oldScrollX, oldScrollY) -> {
 //
@@ -110,18 +146,112 @@ public class MainActivity extends AppCompatActivity {
 
         });
 
-        ConstVideo.setOnClickListener(v -> {
 
-            String url = "https://koochitatv.com/video/show/8uU6LhcBap";
-            Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(url));
-            startActivity(i);
+    }
+
+    private void JsonParseGetRate() {
+
+        String url = "http://185.239.106.26/api/place/getRates/606ddc223f04952c46589811";
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(url, new JsonHttpResponseHandler() {
+            @SuppressLint("SetTextI18n")
+            @Override
+            public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
+                super.onSuccess(statusCode, headers, response);
+                Gson gson = new Gson();
+                PrayTimeClassGetRate pray = gson.fromJson(response.toString(), PrayTimeClassGetRate.class);
+
+                int JsonOne = pray.get1();
+                int JsonTwo = pray.get2();
+                int JsonThree = pray.get3();
+                int JsonFour = pray.get4();
+                int JsonFive = pray.get5();
+
+                int Average = JsonOne + JsonTwo + JsonThree + JsonFour + JsonFive;
+
+
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI Five<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+                int FivePercentage = (JsonFive / Average) * 100;
+                float b = 100f;
+                float c = b - (float) FivePercentage;
+                LinearLayout.LayoutParams layoutParams = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, (float) FivePercentage);
+                LinearLayout.LayoutParams layoutParams2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, c);
+                ImgRateViewFive.setLayoutParams(layoutParams);
+                ImgRateViewFive2.setLayoutParams(layoutParams2);
+                txtFlot5.setText(FivePercentage + "%");
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI Five<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI Foue<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+
+                int FourePercentage = (JsonFour / Average) * 100;
+                float d = 100f;
+                float e = d - (float) FourePercentage;
+                LinearLayout.LayoutParams layoutParams3 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, (float) FourePercentage);
+                LinearLayout.LayoutParams layoutParams4 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, e);
+                ImgRateViewFoure.setLayoutParams(layoutParams3);
+                ImgRateViewFoure2.setLayoutParams(layoutParams4);
+                txtflot4.setText(FourePercentage + "%");
+
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI Foue<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI Three<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+                int ThreePercentage = (JsonThree / Average) * 100;
+                float f = 100f;
+                float g = f - (float) ThreePercentage;
+                LinearLayout.LayoutParams layoutParams5 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, (float) ThreePercentage);
+                LinearLayout.LayoutParams layoutParams6 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, g);
+                ImgRateViewThree.setLayoutParams(layoutParams5);
+                ImgRateViewThree2.setLayoutParams(layoutParams6);
+                txtflot3.setText(ThreePercentage + "%");
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI Three<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI Two<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+                int TwoPercentage = (JsonTwo / Average) * 100;
+                float h = 100f;
+                float i = h - (float) TwoPercentage;
+                LinearLayout.LayoutParams layoutParams7 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, (float) TwoPercentage);
+                LinearLayout.LayoutParams layoutParams8 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, i);
+                ImgRateViewTwo.setLayoutParams(layoutParams7);
+                ImgRateViewTwo2.setLayoutParams(layoutParams8);
+                txtFlot2.setText(TwoPercentage + "%");
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI Two<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI One<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+                int OnePercentage = (JsonOne / Average) * 100;
+                float j = 100f;
+                float k = j - (float) OnePercentage;
+
+                LinearLayout.LayoutParams layoutParams9 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, (float) OnePercentage);
+                LinearLayout.LayoutParams layoutParams10 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, k);
+                ImgRateViewOne.setLayoutParams(layoutParams9);
+                ImgRateViewOne2.setLayoutParams(layoutParams10);
+
+                txtFlot1.setText(OnePercentage + "%");
+//                >>>>>>>>>>>>>>>>>>>>>>>>>>UI One<<<<<<<<<<<<<<<<<<<<<<<<<<             //
+
+            }
+
         });
+
 
     }
 
     private void FindViewByID() {
+        layout_emtiyaz_karbar = findViewById(R.id.layout_emtiyaz_karbar);
         ConstVideo = findViewById(R.id.ConstVideo);
+        constraintLayout = findViewById(R.id.accelerate);
+        ImgRateViewOne = findViewById(R.id.ImgRateViewOne);
+        ImgRateViewOne2 = findViewById(R.id.ImgRateViewOne2);
+        txtFlot2 = findViewById(R.id.txtFlot2);
+        ImgRateViewTwo = findViewById(R.id.ImgRateViewTwo);
+        txtFlot1 = findViewById(R.id.txtFlot1);
+        ImgRateViewTwo2 = findViewById(R.id.ImgRateViewTwo2);
+        txtflot3 = findViewById(R.id.txtflot3);
+        ImgRateViewThree = findViewById(R.id.ImgRateViewThree);
+        ImgRateViewThree2 = findViewById(R.id.ImgRateViewThree2);
+        txtflot4 = findViewById(R.id.txtflot4);
+        ImgRateViewFoure = findViewById(R.id.ImgRateViewFoure);
+        ImgRateViewFoure2 = findViewById(R.id.ImgRateViewFoure2);
+        txtFlot5 = findViewById(R.id.txtFlot5);
+        ImgRateViewFive = findViewById(R.id.ImgRateViewFive);
+        ImgRateViewFive2 = findViewById(R.id.ImgRateViewFive2);
         Txtstar = findViewById(R.id.Txtstar);
         TxtImageWeb = findViewById(R.id.TxtImageWeb);
         TxtBag = findViewById(R.id.TxtBag);

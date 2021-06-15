@@ -65,7 +65,6 @@ dependencies {
     implementation 'com.github.ferrytan:skeletonplaceholderview:1.1.0'
 
 
-    implementation 'com.github.florent37:fiftyshadesof:1.0.0'
 
 
     implementation 'com.facebook.shimmer:shimmer:0.5.0'
@@ -74,6 +73,7 @@ dependencies {
 
 
     implementation 'com.google.code.gson:gson:2.8.7'
+
 
 
 
