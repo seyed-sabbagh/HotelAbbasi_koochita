@@ -168,14 +168,6 @@
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:layout_gravity="center"
-                android:gravity="center"
-                android:id="@+id/line3"
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:orientation="horizontal" />
 
             <include
                 android:id="@+id/include"
@@ -444,7 +436,18 @@
                     android:paddingEnd="40dp" />
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/line3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:orientation="vertical" />
+
+
         </LinearLayout>
+
 
     </ScrollView>
 
