@@ -2,7 +2,6 @@ package com.google.hotelabbasi;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Build;
@@ -59,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
     View ViewView;
     ScrollView scrollView;
     RelativeLayout relativeLayout;
+    String nameJson;
     private CardView cardView;
     private RequestQueue mqueue;
 
@@ -79,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
         JsonParseGetRate();
         locationViewPager();
         JsonParsgetFeatures();
+        JsonParsgetFeaturesSetText();
         ResturanViewPager();
         compositePageTransformer();
         TypeFace();
@@ -329,9 +330,9 @@ public class MainActivity extends AppCompatActivity {
                     for (int i = 0; i < allFeatures.length(); i++) {
                         JSONObject object = allFeatures.getJSONObject(i);
 
-                        String tt2 = object.getString("name");
+                        nameJson = object.getString("name");
 
-                        Log.d("TAG", "onSuccess: " + tt2);
+                        Log.d("TAG", "onSuccess: " + nameJson);
 
                         JSONArray jsonArray = object.getJSONArray("features");
                         for (int j = 0; j < jsonArray.length(); j++) {
@@ -340,11 +341,10 @@ public class MainActivity extends AppCompatActivity {
 
                         }
 
-
                         for (int j = 0; j < 1; j++) {
                             Typeface typeface = Typeface.createFromAsset(getAssets(), "iransans.ttf");
                             TextView tv = new TextView(MainActivity.this);
-                            tv.setText(tt2);
+                            tv.setText(nameJson);
                             tv.setTextSize(20);
                             line1.addView(tv);
                             tv.setTypeface(typeface);
@@ -366,6 +366,12 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
+
+    private void JsonParsgetFeaturesSetText() {
+
+
+    }
+
 
     private void jsonParseGetInfo() {
         String url = "http://185.239.106.26/api/place/getInfo/%D9%87%D8%AA%D9%84_%D8%B9%D8%A8%D8%A7%D8%B3%DB%8C";
