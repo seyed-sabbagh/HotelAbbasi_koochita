@@ -28,15 +28,15 @@
 
 
     <GridLayout
-        android:layout_margin="20dp"
         android:id="@+id/linear_layout"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:columnCount="4"
-        android:gravity="start"
-        android:padding="20dp"
+        android:alignmentMode="alignMargins"
+        android:columnCount="3"
+        android:columnOrderPreserved="true"
+        android:orientation="horizontal"
+        android:useDefaultMargins="false"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TxtGhazaOtagh">
 
 
