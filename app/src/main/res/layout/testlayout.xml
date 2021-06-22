@@ -27,17 +27,19 @@
         app:layout_constraintTop_toTopOf="@+id/TxtGhazaOtagh" />
 
 
-    <LinearLayout
+    <GridLayout
+        android:layout_margin="20dp"
         android:id="@+id/linear_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:alpha="0.7"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:layout_height="wrap_content"
+        android:columnCount="4"
+        android:gravity="start"
+        android:padding="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/TxtGhazaOtagh">
 
-    </LinearLayout>
+
+    </GridLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
