@@ -1,11 +1,10 @@
-package com.google.hotelabbasi.jsonschema2pojo;
+package com.google.hotelabbasi.jsonschema2pojo.GetInfo;
 
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class PrayTimeClassGetInfo {
-
     @SerializedName("kind_id")
     @Expose
     private Integer kindId;
@@ -71,7 +70,7 @@ public class PrayTimeClassGetInfo {
     private Integer fullRate;
     @SerializedName("id")
     @Expose
-    private Integer id;
+    private String id;
     @SerializedName("state")
     @Expose
     private String state;
@@ -277,11 +276,11 @@ public class PrayTimeClassGetInfo {
         this.fullRate = fullRate;
     }
 
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
     }
 
