@@ -32,9 +32,16 @@
     <string name="ic_bag_web">"\uE0C5"</string>
     <string name="ic_bookmark_web">"\uE0DD"</string>
     <string name="noe_otagh">نوع اتاق</string>
+    <string name="ic_comment">\uE821</string>
+    <string name="ic_comment_full">\uE822</string>
+    <string name="ic_disLike">\uE81F</string>
+    <string name="ic_like">\uE81D</string>
     <string name="ic_Image_web">"\uE0B1"</string>
     <string name="ic_videClip_web">"\uE1F2"</string>
     <string name="ic_support_web">"\uE1F4"</string>
     <string name="ic_360_web">"\ue1f3"</string>
     <string name="sample1">سؤلات خود را بپرسید تا با کمک دوستانتان آگاهانه‌تر سفر کنید. همچنین می‌توانید با پاسخ یه سؤالات دوستانتان علاوه بر دریافت امتیاز، اطلاعات خود را به اشتراک بگذارید.</string>
+    <string name="sample10">@</string>
+    <string name="sample0">قدیمی‌ترین هتل دنیا هتل عباسی در اصفهان قرار داره و یکی از زیباترین هتل‌های اصفهان و ایران محسوب میشه. این هتل قبلا یک مهمانسرای پر رفت و آمد در دوره صفوی بوده. فقط کافیه یک نگاه به نقاشی‌های این هتل-موزه</string>
+    <string name="tt">"قدیمی‌ترین هتل دنیا هتل عباسی در اصفهان قرار داره و یکی از زیباترین هتل‌های اصفهان و ایران محسوب میشه. این هتل قبلا یک مهمانسرای پر رفت و آمد در دوره صفوی بوده. فقط کافیه یک نگاه به نقاشی‌های این هتل-موزه "</string>
 </resources>

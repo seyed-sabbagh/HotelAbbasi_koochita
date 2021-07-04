@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/KoochitaTV"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/KoochitaTV"
     android:layout_width="match_parent"
-    android:padding="5dp"
     android:layout_height="wrap_content"
-    android:background="@drawable/transparent_bg_bordered_bacgraond_activity">
-
+    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+    android:padding="5dp">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -36,7 +34,7 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="5dp"
             android:fontFamily="@font/iransans"
-            android:text="ناگفته‌های گردشگری"
+            android:text="طرز پخت یتیمچه"
             android:textColor="@color/white"
             android:textSize="10dp"
             app:layout_constraintEnd_toStartOf="@+id/imageView8"
@@ -72,7 +70,6 @@
             android:layout_height="35dp"
             android:elevation="12dp"
             app:cardCornerRadius="18dp"
-
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textView36"
             app:layout_constraintTop_toBottomOf="@+id/textView36"
@@ -80,22 +77,21 @@
 
             <ImageView
                 android:id="@+id/circleImagess"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-
                 android:scaleType="centerCrop"
-                android:src="@color/white" />
+                android:src="@drawable/userpic" />
 
 
         </androidx.cardview.widget.CardView>
 
 
         <ImageView
-            android:alpha="0.3"
             android:id="@+id/imageView8"
             android:layout_width="250dp"
             android:layout_height="120dp"
+            android:alpha="0.3"
             android:background="@drawable/transparent_bg_bordered"
             android:scaleType="centerCrop"
             android:src="@drawable/videpleyer"
@@ -103,14 +99,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/view7"
             app:layout_constraintTop_toTopOf="parent" />
+
         <ImageView
-            app:layout_constraintStart_toStartOf="@id/imageView8"
-            app:layout_constraintTop_toTopOf="@id/imageView8"
-            app:layout_constraintBottom_toBottomOf="@id/imageView8"
-            app:layout_constraintEnd_toEndOf="@id/imageView8"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:src="@drawable/play"/>
+            android:src="@drawable/play"
+            app:layout_constraintBottom_toBottomOf="@id/imageView8"
+            app:layout_constraintEnd_toEndOf="@id/imageView8"
+            app:layout_constraintStart_toStartOf="@id/imageView8"
+            app:layout_constraintTop_toTopOf="@id/imageView8" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

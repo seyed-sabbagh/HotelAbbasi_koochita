@@ -63,7 +63,7 @@
             android:layout_gravity="center"
 
             android:scaleType="centerCrop"
-            android:src="@drawable/ic_hare" />
+            android:src="@drawable/ic_share" />
 
 
     </androidx.cardview.widget.CardView>
