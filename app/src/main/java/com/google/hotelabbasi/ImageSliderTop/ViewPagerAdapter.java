@@ -2,6 +2,7 @@ package com.google.hotelabbasi.ImageSliderTop;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,8 @@ import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.android.volley.toolbox.ImageLoader;
+import com.google.hotelabbasi.MainActivity;
+import com.google.hotelabbasi.PicAlbum.PicAlbumActivity;
 import com.google.hotelabbasi.R;
 
 import java.util.List;
@@ -58,13 +61,17 @@ public class ViewPagerAdapter extends PagerAdapter {
             @Override
             public void onClick(View v) {
 
-                if(position == 0){
-                    Toast.makeText(context, "Slide 1 Clicked", Toast.LENGTH_SHORT).show();
-                } else if(position == 1){
-                    Toast.makeText(context, "Slide 2 Clicked", Toast.LENGTH_SHORT).show();
-                } else {
-                    Toast.makeText(context, "Slide 3 Clicked", Toast.LENGTH_SHORT).show();
-                }
+                v.getContext().startActivity(new Intent(context, PicAlbumActivity.class));
+
+
+//
+//                if(position == 0){
+//                    Toast.makeText(context, "Slide 1 Clicked", Toast.LENGTH_SHORT).show();
+//                } else if(position == 1){
+//                    Toast.makeText(context, "Slide 2 Clicked", Toast.LENGTH_SHORT).show();
+//                } else {
+//                    Toast.makeText(context, "Slide 3 Clicked", Toast.LENGTH_SHORT).show();
+//                }
 
             }
         });

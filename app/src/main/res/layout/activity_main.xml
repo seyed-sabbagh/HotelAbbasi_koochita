@@ -172,8 +172,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/confirm_button"
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@drawable/transparent_bg_bordered">
+                android:layout_height="200dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/ConstraintLayout_image_slider_top_mainactivity"
@@ -186,36 +185,17 @@
                         android:id="@+id/viewPager"
                         android:layout_width="match_parent"
                         android:layout_height="190dp"
-                        android:layout_marginBottom="8dp"/>
+                        android:layout_marginBottom="8dp" />
 
                     <LinearLayout
                         android:id="@+id/SliderDots"
-                        android:layout_below="@+id/viewPager"
-                        android:orientation="horizontal"
-                        android:gravity="center_vertical|center_horizontal"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"/>
-<!--                    -->
-<!--                    <TextView-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="5dp"-->
-<!--                        android:text="3"-->
-<!--                        android:textColor="@color/white"-->
-<!--                        android:textSize="20sp"-->
-<!--                        app:layout_constraintBottom_toBottomOf="@+id/imageView"-->
-<!--                        app:layout_constraintStart_toEndOf="@+id/imageView"-->
-<!--                        app:layout_constraintTop_toTopOf="@+id/imageView" />-->
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/viewPager"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:orientation="horizontal"
+                        app:layout_constraintBottom_toBottomOf="@+id/viewPager" />
 
-<!--                    <ImageView-->
-<!--                        android:id="@+id/imageView"-->
-<!--                        android:layout_width="wrap_content"-->
-<!--                        android:layout_height="wrap_content"-->
-<!--                        android:layout_marginStart="20dp"-->
-<!--                        android:layout_marginBottom="10dp"-->
-<!--                        android:src="@drawable/ic_camera"-->
-<!--                        app:layout_constraintBottom_toBottomOf="@+id/image_slider"-->
-<!--                        app:layout_constraintStart_toStartOf="parent" />-->
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
