@@ -270,8 +270,8 @@
                 android:layout_margin="10dp" />
 
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_width="600dp"
+                android:layout_height="400dp"
                 android:layout_margin="5dp"
                 android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
                 android:padding="5dp">
@@ -279,7 +279,7 @@
                 <ImageView
                     android:id="@+id/img_logo_koochitaa"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_margin="5dp"
                     android:scaleType="centerCrop"
                     android:src="@drawable/map_pic" />

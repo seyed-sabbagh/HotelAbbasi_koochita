@@ -32,9 +32,6 @@ public class PrayTimeClassGetInfo {
     @SerializedName("cityId")
     @Expose
     private Integer cityId;
-    @SerializedName("video")
-    @Expose
-    private String video;
     @SerializedName("vabastegi")
     @Expose
     private String vabastegi;
@@ -56,18 +53,12 @@ public class PrayTimeClassGetInfo {
     @SerializedName("file")
     @Expose
     private String file;
-    @SerializedName("updated_at")
-    @Expose
-    private String updatedAt;
     @SerializedName("rate")
     @Expose
     private Double rate;
     @SerializedName("reviewCount")
     @Expose
     private Integer reviewCount;
-    @SerializedName("fullRate")
-    @Expose
-    private Integer fullRate;
     @SerializedName("id")
     @Expose
     private String id;
@@ -83,12 +74,6 @@ public class PrayTimeClassGetInfo {
     @SerializedName("address")
     @Expose
     private String address;
-    @SerializedName("reserveId")
-    @Expose
-    private Integer reserveId;
-    @SerializedName("author")
-    @Expose
-    private Integer author;
     @SerializedName("stateId")
     @Expose
     private Integer stateId;
@@ -107,6 +92,9 @@ public class PrayTimeClassGetInfo {
     @SerializedName("name")
     @Expose
     private String name;
+    @SerializedName("mapUrl")
+    @Expose
+    private String mapUrl;
 
     public Integer getKindId() {
         return kindId;
@@ -180,14 +168,6 @@ public class PrayTimeClassGetInfo {
         this.cityId = cityId;
     }
 
-    public String getVideo() {
-        return video;
-    }
-
-    public void setVideo(String video) {
-        this.video = video;
-    }
-
     public String getVabastegi() {
         return vabastegi;
     }
@@ -244,14 +224,6 @@ public class PrayTimeClassGetInfo {
         this.file = file;
     }
 
-    public String getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(String updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public Double getRate() {
         return rate;
     }
@@ -266,14 +238,6 @@ public class PrayTimeClassGetInfo {
 
     public void setReviewCount(Integer reviewCount) {
         this.reviewCount = reviewCount;
-    }
-
-    public Integer getFullRate() {
-        return fullRate;
-    }
-
-    public void setFullRate(Integer fullRate) {
-        this.fullRate = fullRate;
     }
 
     public String getId() {
@@ -314,22 +278,6 @@ public class PrayTimeClassGetInfo {
 
     public void setAddress(String address) {
         this.address = address;
-    }
-
-    public Integer getReserveId() {
-        return reserveId;
-    }
-
-    public void setReserveId(Integer reserveId) {
-        this.reserveId = reserveId;
-    }
-
-    public Integer getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(Integer author) {
-        this.author = author;
     }
 
     public Integer getStateId() {
@@ -380,4 +328,11 @@ public class PrayTimeClassGetInfo {
         this.name = name;
     }
 
+    public String getMapUrl() {
+        return mapUrl;
+    }
+
+    public void setMapUrl(String mapUrl) {
+        this.mapUrl = mapUrl;
+    }
 }

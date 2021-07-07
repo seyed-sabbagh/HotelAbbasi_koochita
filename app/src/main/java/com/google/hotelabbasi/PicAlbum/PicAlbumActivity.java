@@ -33,7 +33,6 @@ public class PicAlbumActivity extends AppCompatActivity {
     private Adapter adapter;
     private ArrayList<ListItem> listItems;
     private Context context;
-    private RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,7 +47,7 @@ public class PicAlbumActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         listItems = new ArrayList<>();
-        requestQueue = Volley.newRequestQueue(this);
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
 
         String url = "http://185.239.106.26/api/place/getPics/606ddc223f04952c46589811";
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
@@ -67,8 +66,6 @@ public class PicAlbumActivity extends AppCompatActivity {
                         recyclerView.setLayoutManager(layoutManager);
                         Picasso.get().load(s).fit().centerCrop().into(ImgAlbumMainA);
                         recyclerView.setAdapter(adapter);
-
-
 
                     }
                 } catch (JSONException e) {

@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class PrayTimeClassGetRate {
-
     @SerializedName("1")
     @Expose
     private Integer _1;
@@ -20,9 +19,6 @@ public class PrayTimeClassGetRate {
     @SerializedName("5")
     @Expose
     private Integer _5;
-    @SerializedName("status")
-    @Expose
-    private String status;
 
     public Integer get1() {
         return _1;
@@ -63,13 +59,4 @@ public class PrayTimeClassGetRate {
     public void set5(Integer _5) {
         this._5 = _5;
     }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
 }
