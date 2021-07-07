@@ -101,6 +101,8 @@
         android:layout_height="50dp"
         android:layout_alignParentEnd="true"
         android:layout_margin="10dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:backgroundTint="#2C2C2E"
         android:elevation="12dp"
         app:cardCornerRadius="30dp"

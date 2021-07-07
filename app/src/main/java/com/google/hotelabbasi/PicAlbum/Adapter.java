@@ -1,7 +1,7 @@
 package com.google.hotelabbasi.PicAlbum;
 
 import android.content.Context;
-import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,13 +10,14 @@ import android.widget.ImageView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.google.android.gms.maps.model.Circle;
 import com.google.hotelabbasi.R;
 import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+
+import static com.google.hotelabbasi.PicAlbum.PicAlbumActivity.ImgAlbumMainA;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
@@ -49,6 +50,16 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
         Picasso.get().load(ImageUrl).into(holder.imageViewAlbum);
 
+        holder.imageViewAlbum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d("SSS", "onClick: " + position);
+
+                String aa = listItems.get(position).getImageUrl();
+                Picasso.get().load(aa).fit().centerCrop().into(ImgAlbumMainA);
+
+            }
+        });
 
 
     }
@@ -68,7 +79,6 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
             imageViewAlbum = itemView.findViewById(R.id.image_viewAlbum);
 
             recyclerView = itemView.findViewById(R.id.RecyclerViewAlbum);
-
 
 
         }
