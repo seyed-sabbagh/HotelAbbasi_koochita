@@ -26,7 +26,7 @@ public class SliderRestaurantsAdapter extends RecyclerView.Adapter<SliderRestaur
     public TravelLocationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new TravelLocationViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.item_container_location,parent,false));
+                        R.layout.item_container_location, parent, false));
     }
 
     @Override
@@ -39,10 +39,11 @@ public class SliderRestaurantsAdapter extends RecyclerView.Adapter<SliderRestaur
         return sliderModelResturans.size();
     }
 
-    static class TravelLocationViewHolder extends RecyclerView.ViewHolder{
+    static class TravelLocationViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView kbvLocation;
-        private TextView txttitle,txtlocation;
+        private final ImageView kbvLocation;
+        private final TextView txttitle;
+        private final TextView txtlocation;
 
         public TravelLocationViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -50,6 +51,7 @@ public class SliderRestaurantsAdapter extends RecyclerView.Adapter<SliderRestaur
             txtlocation = itemView.findViewById(R.id.txtlocation);
             txttitle = itemView.findViewById(R.id.txtTitle);
         }
+
         void setLocationData(SliderModelResturan sliderModelTabiat) {
             Picasso.get().load(sliderModelTabiat.imageUrl).into(kbvLocation);
             txttitle.setText(sliderModelTabiat.title);

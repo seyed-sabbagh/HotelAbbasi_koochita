@@ -1,4 +1,3 @@
-
 package com.google.hotelabbasi.jsonschema2pojo.GetFeatures;
 
 import com.google.gson.annotations.Expose;

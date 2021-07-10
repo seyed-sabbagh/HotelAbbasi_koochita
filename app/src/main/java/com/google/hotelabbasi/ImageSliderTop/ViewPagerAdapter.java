@@ -7,13 +7,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.android.volley.toolbox.ImageLoader;
-import com.google.hotelabbasi.MainActivity;
 import com.google.hotelabbasi.PicAlbum.PicAlbumActivity;
 import com.google.hotelabbasi.R;
 
@@ -22,13 +20,13 @@ import java.util.List;
 
 public class ViewPagerAdapter extends PagerAdapter {
 
-    private Context context;
+    private final Context context;
     private LayoutInflater layoutInflater;
-    private List<SliderUtils> sliderImg;
+    private final List<SliderUtils> sliderImg;
     private ImageLoader imageLoader;
 
 
-    public ViewPagerAdapter(List sliderImg,Context context) {
+    public ViewPagerAdapter(List sliderImg, Context context) {
         this.sliderImg = sliderImg;
         this.context = context;
     }
@@ -51,7 +49,7 @@ public class ViewPagerAdapter extends PagerAdapter {
 
         SliderUtils utils = sliderImg.get(position);
 
-        ImageView imageView = (ImageView) view.findViewById(R.id.imageView);
+        ImageView imageView = view.findViewById(R.id.imageView);
 
         imageLoader = CustomVolleyRequest.getInstance(context).getImageLoader();
         imageLoader.get(utils.getSliderImageUrl(), ImageLoader.getImageListener(imageView, R.mipmap.ic_launcher, android.R.drawable.ic_dialog_alert));

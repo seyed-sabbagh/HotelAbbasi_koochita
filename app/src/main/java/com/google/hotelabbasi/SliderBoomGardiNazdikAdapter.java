@@ -1,5 +1,6 @@
 package com.google.hotelabbasi;
 
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,7 +21,6 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
     public SliderBoomGardiNazdikAdapter(List<SliderModelTabiat> sliderModelTabiats) {
         this.sliderModelTabiats = sliderModelTabiats;
     }
-
 
 
     @NonNull
@@ -47,8 +47,9 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
 
     static class TravelLocationViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView kbvLocation;
-        private TextView txtTitle, txtLocation;
+        private final ImageView kbvLocation;
+        private final TextView txtTitle;
+        private final TextView txtLocation;
 
         TravelLocationViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -58,7 +59,7 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
         }
 
         void setLocationData(SliderModelTabiat sliderModelTabiat) {
-            Picasso.get().load(sliderModelTabiat.imageUrl).into(kbvLocation);
+            Picasso.get().load( sliderModelTabiat.imageUrl).into(kbvLocation);
             txtTitle.setText(sliderModelTabiat.title);
             txtLocation.setText(sliderModelTabiat.location);
         }

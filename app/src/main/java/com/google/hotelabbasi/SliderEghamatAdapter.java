@@ -13,9 +13,9 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class SliderEghamatAdapter extends RecyclerView.Adapter<SliderEghamatAdapter.TravelLocationViewHolder>{
+public class SliderEghamatAdapter extends RecyclerView.Adapter<SliderEghamatAdapter.TravelLocationViewHolder> {
 
-    private List<SliderModelEghamat> sliderModelEghamats;
+    private final List<SliderModelEghamat> sliderModelEghamats;
 
     public SliderEghamatAdapter(List<SliderModelEghamat> sliderModelEghamats) {
         this.sliderModelEghamats = sliderModelEghamats;
@@ -26,7 +26,7 @@ public class SliderEghamatAdapter extends RecyclerView.Adapter<SliderEghamatAdap
     public TravelLocationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new TravelLocationViewHolder(
                 LayoutInflater.from(parent.getContext()).inflate(R.layout.item_container_location,
-                        parent,false));
+                        parent, false));
     }
 
     @Override
@@ -40,10 +40,11 @@ public class SliderEghamatAdapter extends RecyclerView.Adapter<SliderEghamatAdap
         return sliderModelEghamats.size();
     }
 
-    static class TravelLocationViewHolder extends RecyclerView.ViewHolder{
+    static class TravelLocationViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView kbvLocation;
-        private TextView txtTitle, txtLocation;
+        private final ImageView kbvLocation;
+        private final TextView txtTitle;
+        private final TextView txtLocation;
 
         public TravelLocationViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -52,6 +53,7 @@ public class SliderEghamatAdapter extends RecyclerView.Adapter<SliderEghamatAdap
             txtTitle = itemView.findViewById(R.id.txtTitle);
             txtLocation = itemView.findViewById(R.id.txtlocation);
         }
+
         void setLocationData(SliderModelEghamat sliderModelTabiat) {
             Picasso.get().load(sliderModelTabiat.imageUrl).into(kbvLocation);
             txtTitle.setText(sliderModelTabiat.title);

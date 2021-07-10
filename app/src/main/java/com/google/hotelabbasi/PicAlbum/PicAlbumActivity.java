@@ -1,7 +1,6 @@
 package com.google.hotelabbasi.PicAlbum;
 
 import android.content.Context;
-import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageView;
@@ -79,7 +78,6 @@ public class PicAlbumActivity extends AppCompatActivity {
             }
         });
         requestQueue.add(request);
-
 
 
     }

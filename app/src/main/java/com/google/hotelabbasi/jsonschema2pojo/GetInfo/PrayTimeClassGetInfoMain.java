@@ -2,6 +2,7 @@ package com.google.hotelabbasi.jsonschema2pojo.GetInfo;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+
 public class PrayTimeClassGetInfoMain {
     @SerializedName("detail")
     @Expose

@@ -2,9 +2,7 @@ package com.google.hotelabbasi;
 
 public class SliderModels {
 
-    private String imageUrl;
-    private Integer imagePath;
-    private String title;
-    private boolean centerCrop;
+    public String title, location, imageUrl;
+    public float starRating;
 
 }

@@ -1,4 +1,5 @@
 package com.google.hotelabbasi.ImageSliderTop;
+
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.util.LruCache;
@@ -18,11 +19,11 @@ public class CustomVolleyRequest {
     private static CustomVolleyRequest customVolleyRequest;
     private static Context context;
     private RequestQueue requestQueue;
-    private ImageLoader imageLoader;
+    private final ImageLoader imageLoader;
 
-    private CustomVolleyRequest(Context context){
+    private CustomVolleyRequest(Context context) {
 
-        this.context = context;
+        CustomVolleyRequest.context = context;
         this.requestQueue = getRequestQueue();
 
         imageLoader = new ImageLoader(requestQueue, new ImageLoader.ImageCache() {
@@ -42,17 +43,17 @@ public class CustomVolleyRequest {
 
     }
 
-    public static synchronized CustomVolleyRequest getInstance(Context context){
+    public static synchronized CustomVolleyRequest getInstance(Context context) {
 
-        if(customVolleyRequest == null){
+        if (customVolleyRequest == null) {
             customVolleyRequest = new CustomVolleyRequest(context);
         }
         return customVolleyRequest;
     }
 
-    public RequestQueue getRequestQueue(){
+    public RequestQueue getRequestQueue() {
 
-        if(requestQueue == null){
+        if (requestQueue == null) {
 
             Cache cache = new DiskBasedCache(context.getCacheDir(), 10 * 1024 * 1024);
             Network network = new BasicNetwork(new HurlStack());
@@ -63,11 +64,11 @@ public class CustomVolleyRequest {
         return requestQueue;
     }
 
-    public  void addToRequestQueue(Request req) {
+    public void addToRequestQueue(Request req) {
         getRequestQueue().add(req);
     }
 
-    public ImageLoader getImageLoader(){
+    public ImageLoader getImageLoader() {
 
         return imageLoader;
 

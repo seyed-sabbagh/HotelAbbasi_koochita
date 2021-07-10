@@ -43,9 +43,10 @@ public class SliderJazebeAdapter extends RecyclerView.Adapter<SliderJazebeAdapte
 
     static class SliderJazebeViewHolder extends RecyclerView.ViewHolder {
 
-        private ImageView kbvLocation;
+        private final ImageView kbvLocation;
 
-        private TextView txtTitle, txtLocation;
+        private final TextView txtTitle;
+        private final TextView txtLocation;
 
 
         public SliderJazebeViewHolder(@NonNull View itemView) {

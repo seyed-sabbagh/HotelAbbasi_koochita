@@ -136,358 +136,377 @@
 
     </RelativeLayout>
 
-    <ScrollView
-        android:id="@+id/scrollViewMainActivity"
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/rel"
-        tools:ignore="MissingConstraints">
 
-        <LinearLayout
+        >
+
+
+        <ScrollView
+            android:id="@+id/scrollViewMainActivity"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/black"
-            android:orientation="vertical">
+            tools:ignore="MissingConstraints">
 
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/accelerate2"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="?actionBarSize"
-                android:background="@color/backgraund_toolbar_main_activity"
-                android:visibility="visible">
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/img_logo_koochita"
-                    android:layout_width="250dp"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/koochitalogo"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/confirm_button"
-                android:layout_width="match_parent"
-                android:layout_height="200dp">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/ConstraintLayout_image_slider_top_mainactivity"
+                    android:id="@+id/accelerate2"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="?actionBarSize"
+                    android:background="@color/backgraund_toolbar_main_activity"
                     android:visibility="visible">
 
-                    <androidx.viewpager.widget.ViewPager
-                        android:id="@+id/viewPager"
+                    <ImageView
+                        android:id="@+id/img_logo_koochita"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/koochitalogo"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/confirm_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/ConstraintLayout_image_slider_top_mainactivity"
                         android:layout_width="match_parent"
-                        android:layout_height="190dp"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_height="match_parent"
+                        android:visibility="visible">
+
+                        <androidx.viewpager.widget.ViewPager
+                            android:id="@+id/viewPager"
+                            android:layout_width="match_parent"
+                            android:layout_height="190dp"
+                            android:layout_marginBottom="8dp" />
+
+                        <LinearLayout
+                            android:id="@+id/SliderDots"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/viewPager"
+                            android:gravity="center_vertical|center_horizontal"
+                            android:orientation="horizontal"
+                            app:layout_constraintBottom_toBottomOf="@+id/viewPager" />
+
+                        <TextView
+                            android:id="@+id/txtNumberImage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="3dp"
+                            android:text="3"
+                            android:textColor="@color/white"
+                            android:textSize="20sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                            app:layout_constraintStart_toEndOf="@+id/imageView"
+                            app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+                        <ImageView
+                            android:id="@+id/imageView"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:src="@drawable/ic_camera"
+                            app:layout_constraintBottom_toBottomOf="@+id/viewPager"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:tint="@color/white" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <include
+                    layout="@layout/buttom_list_selection"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    app:layout_constraintTop_toBottomOf="@+id/include2" />
+
+                <include
+                    layout="@layout/info_hotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="2dp" />
+
+                <View
+                    android:id="@+id/ViewView"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp" />
+
+                <include
+                    layout="@layout/videoplayer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginBottom="5dp" />
+
+                <include
+                    layout="@layout/moarefi_koli_mainactivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp" />
+
+
+                <include
+                    layout="@layout/emtiyaz_karbar_mainactivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="400dp"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+                    android:padding="5dp">
+
+                    <ImageView
+                        android:id="@+id/img_logo_koochitaa"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/map_pic" />
+                </RelativeLayout>
+
+                <include
+                    layout="@layout/nazareshome_edit2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="20dp" />
+
+                <include layout="@layout/comment" />
+
+
+                <include
+                    layout="@layout/porsesh_va_pasokh_mainactivity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="5dp"
+                    android:layout_marginTop="20dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+                    android:orientation="vertical"
+                    android:padding="15dp">
 
                     <LinearLayout
-                        android:id="@+id/SliderDots"
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/iransans"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="بوم گردی های نزدیک"
+                            android:textColor="@color/blue_web"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/ic_koochita" />
+
+                    </LinearLayout>
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/locationsviewPager"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@+id/viewPager"
-                        android:gravity="center_vertical|center_horizontal"
-                        android:orientation="horizontal"
-                        app:layout_constraintBottom_toBottomOf="@+id/viewPager" />
+                        android:layout_height="185dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="40dp" />
 
-                    <TextView
-                        android:id="@+id/txtNumberImage"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="3dp"
-                        android:text="3"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                        app:layout_constraintStart_toEndOf="@+id/imageView"
-                        app:layout_constraintTop_toTopOf="@+id/imageView" />
+                </LinearLayout>
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:layout_marginBottom="8dp"
-                        android:src="@drawable/ic_camera"
-                        app:layout_constraintBottom_toBottomOf="@+id/viewPager"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:tint="@color/white" />
-
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.constraintlayout.widget.ConstraintLayout>
-
-            <include
-                layout="@layout/buttom_list_selection"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                app:layout_constraintTop_toBottomOf="@+id/include2" />
-
-            <include
-                layout="@layout/info_hotel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="2dp" />
-
-            <View
-                android:id="@+id/ViewView"
-                android:layout_width="match_parent"
-                android:layout_height="1dp" />
-
-            <include
-                layout="@layout/videoplayer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_marginEnd="5dp"
-                android:layout_marginBottom="5dp" />
-
-            <include
-                layout="@layout/moarefi_koli_mainactivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="10dp" />
-
-
-            <include
-                layout="@layout/emtiyaz_karbar_mainactivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="10dp" />
-
-            <RelativeLayout
-                android:layout_width="600dp"
-                android:layout_height="400dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
-                android:padding="5dp">
-
-                <ImageView
-                    android:id="@+id/img_logo_koochitaa"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/map_pic" />
-            </RelativeLayout>
+                    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:visibility="gone">
 
-            <include
-                layout="@layout/nazareshome_edit2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:layout_marginTop="20dp" />
-
-            <include layout="@layout/comment" />
-
-
-            <include
-                layout="@layout/porsesh_va_pasokh_mainactivity"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="5dp"
-                android:layout_marginTop="20dp" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
-                android:orientation="vertical"
-                android:padding="15dp">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_gravity="end"
-                    android:orientation="horizontal">
-
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginEnd="5dp"
-                        android:fontFamily="@font/iransans"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="بوم گردی های نزدیک"
-                        android:textColor="@color/blue_web"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                        android:layout_height="35dp"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/ic_koochita" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/iransans"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="جاذبه های نزدیک"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/koochitalogo" />
+                    </LinearLayout>
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/locationsviewPager2"
+                        android:layout_width="match_parent"
+                        android:layout_height="185dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="40dp" />
 
                 </LinearLayout>
 
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/locationsviewPager"
-                    android:layout_width="match_parent"
-                    android:layout_height="185dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="40dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:visibility="gone">
-
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_gravity="end"
-                    android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:visibility="gone">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginEnd="5dp"
-                        android:fontFamily="@font/iransans"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="جاذبه های نزدیک"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                        android:layout_height="35dp"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/koochitalogo" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/iransans"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="محبوب‌ترین رستوران‌ها"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/koochitalogo" />
+                    </LinearLayout>
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/locationsviewPager3"
+                        android:layout_width="match_parent"
+                        android:layout_height="185dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="40dp" />
+
                 </LinearLayout>
 
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/locationsviewPager2"
-                    android:layout_width="match_parent"
-                    android:layout_height="185dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="40dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:visibility="gone">
-
                 <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_gravity="end"
-                    android:orientation="horizontal">
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
+                    android:orientation="vertical"
+                    android:padding="15dp"
+                    android:visibility="gone">
 
-                    <TextView
+                    <LinearLayout
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginEnd="5dp"
-                        android:fontFamily="@font/iransans"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="محبوب‌ترین رستوران‌ها"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+                        android:layout_height="35dp"
+                        android:layout_gravity="end"
+                        android:orientation="horizontal">
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/koochitalogo" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="bottom"
+                            android:layout_marginEnd="5dp"
+                            android:fontFamily="@font/iransans"
+                            android:gravity="center"
+                            android:padding="5dp"
+                            android:text="اقامتگاه های نزدیک"
+                            android:textColor="@color/black"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <ImageView
+                            android:layout_width="70dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:scaleType="centerInside"
+                            android:src="@drawable/koochitalogo" />
+                    </LinearLayout>
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/locationsviewPager4"
+                        android:layout_width="match_parent"
+                        android:layout_height="185dp"
+                        android:paddingStart="20dp"
+                        android:paddingEnd="40dp" />
                 </LinearLayout>
 
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/locationsviewPager3"
-                    android:layout_width="match_parent"
-                    android:layout_height="185dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="40dp" />
 
             </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
-                android:orientation="vertical"
-                android:padding="15dp"
-                android:visibility="gone">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="35dp"
-                    android:layout_gravity="end"
-                    android:orientation="horizontal">
+        </ScrollView>
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="bottom"
-                        android:layout_marginEnd="5dp"
-                        android:fontFamily="@font/iransans"
-                        android:gravity="center"
-                        android:padding="5dp"
-                        android:text="اقامتگاه های نزدیک"
-                        android:textColor="@color/black"
-                        android:textSize="17sp"
-                        android:textStyle="bold" />
+        <com.aniket.mutativefloatingactionbutton.MutativeFab
+            android:id="@+id/fab"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            app:fabBackgroundColor="#444444"
+            app:fabIcon="@drawable/ic_star"
+            app:fabText="relocate"
+            app:fabTextColor="@color/white" />
 
-                    <ImageView
-                        android:layout_width="70dp"
-                        android:layout_height="20dp"
-                        android:layout_gravity="center"
-                        android:scaleType="centerInside"
-                        android:src="@drawable/koochitalogo" />
-                </LinearLayout>
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/locationsviewPager4"
-                    android:layout_width="match_parent"
-                    android:layout_height="185dp"
-                    android:paddingStart="20dp"
-                    android:paddingEnd="40dp" />
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-    </ScrollView>
-
-
+    </RelativeLayout>
 </LinearLayout>
