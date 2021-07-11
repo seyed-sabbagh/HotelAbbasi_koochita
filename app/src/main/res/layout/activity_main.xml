@@ -140,9 +140,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/rel"
-
-        >
+        app:layout_constraintTop_toBottomOf="@+id/rel">
 
 
         <ScrollView
@@ -278,6 +276,7 @@
                     android:layout_margin="10dp" />
 
                 <RelativeLayout
+                    android:id="@+id/RelImage"
                     android:layout_width="match_parent"
                     android:layout_height="400dp"
                     android:layout_margin="5dp"
@@ -293,6 +292,11 @@
                         android:src="@drawable/map_pic" />
                 </RelativeLayout>
 
+                <TextView
+                    android:id="@+id/TxtGetYNazareShome"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp" />
+
                 <include
                     layout="@layout/nazareshome_edit2"
                     android:layout_width="match_parent"
@@ -303,7 +307,10 @@
 
                 <include layout="@layout/comment" />
 
-
+                <TextView
+                    android:id="@+id/TxtGetYPorseshVaPasokh"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"/>
                 <include
                     layout="@layout/porsesh_va_pasokh_mainactivity"
                     android:layout_width="match_parent"
@@ -499,10 +506,10 @@
 
         <com.aniket.mutativefloatingactionbutton.MutativeFab
             android:id="@+id/fab"
-            android:visibility="invisible"
             android:layout_width="wrap_content"
             android:layout_height="50dp"
             android:layout_alignParentBottom="true"
+            android:visibility="invisible"
             app:fabBackgroundColor="#444444"
             app:fabIcon="@drawable/ic_star"
             app:fabText="relocate"

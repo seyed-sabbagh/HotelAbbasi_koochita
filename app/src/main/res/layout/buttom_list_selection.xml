@@ -15,7 +15,7 @@
 
 
         <TextView
-            android:id="@+id/textView18"
+            android:id="@+id/TxtMoarefiKoli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -25,11 +25,11 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/textView19"
+            app:layout_constraintStart_toEndOf="@+id/TxtMap"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView19"
+            android:id="@+id/TxtMap"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -38,12 +38,12 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView18"
-            app:layout_constraintStart_toEndOf="@+id/textView20"
+            app:layout_constraintEnd_toStartOf="@+id/TxtMoarefiKoli"
+            app:layout_constraintStart_toEndOf="@+id/TxtNazar"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView20"
+            android:id="@+id/TxtNazar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -52,12 +52,12 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView19"
-            app:layout_constraintStart_toEndOf="@+id/textView23"
+            app:layout_constraintEnd_toStartOf="@+id/TxtMap"
+            app:layout_constraintStart_toEndOf="@+id/TxtPoeseshVaPasokhh"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView23"
+            android:id="@+id/TxtPoeseshVaPasokhh"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"
@@ -66,7 +66,7 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView20"
+            app:layout_constraintEnd_toStartOf="@+id/TxtNazar"
             app:layout_constraintStart_toEndOf="@+id/textView24"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -81,7 +81,7 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView23"
+            app:layout_constraintEnd_toStartOf="@+id/TxtPoeseshVaPasokhh"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
