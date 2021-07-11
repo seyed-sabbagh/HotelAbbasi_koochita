@@ -1,11 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
     android:paddingBottom="20dp">
 
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/blue_web"
+        app:layout_constraintBottom_toBottomOf="@+id/textView31"
+        app:layout_constraintEnd_toStartOf="@+id/textView31"
+        app:layout_constraintTop_toTopOf="@+id/textView31" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/blue_web"
+        app:layout_constraintBottom_toBottomOf="@+id/textView31"
+        app:layout_constraintStart_toEndOf="@+id/textView31"
+        app:layout_constraintTop_toTopOf="@+id/textView31" />
 
     <TextView
         android:id="@+id/textView31"
@@ -18,13 +34,13 @@
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView32"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:alpha="0.7"
         android:fontFamily="@font/iransans"
         android:gravity="start"
         android:padding="10dp"
@@ -32,8 +48,26 @@
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="12sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+    <TextView
+        android:id="@+id/textView38"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:alpha="0.7"
+        android:fontFamily="@font/iransans"
+        android:gravity="start"
+        android:padding="10dp"
+        android:paddingStart="30dp"
+        android:text="@string/sample177"
+        android:textAlignment="textStart"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
 
     <TextView
         android:id="@+id/textView33"
@@ -45,140 +79,66 @@
         android:textColor="#D7000000"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32" />
-
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="1dp"
-        android:layout_margin="10dp"
-        android:background="@color/blue_web"
-        app:layout_constraintBottom_toBottomOf="@+id/textView31"
-        app:layout_constraintEnd_toStartOf="@+id/textView31"
-        app:layout_constraintTop_toTopOf="@+id/textView31" />
-    <!--
-
-        <LinearLayout
-            android:id="@+id/relativeLayout"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:layout_margin="5dp"
-            android:layout_marginTop="20dp"
-            android:background="#f2f2f2"
-            android:gravity="center"
-            android:orientation="horizontal"
-            android:padding="10dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView33">
-
-    &lt;!&ndash;
-
-                    <com.tomlonghurst.expandablehinttext.ExpandableHintText
-                        android:layout_gravity="center"
-                        android:id="@+id/expandableHintText3"
-                        android:layout_width="300dp"
-                        android:layout_height="match_parent"
-                        android:hint="شما چه سوالی دارید؟"
-                        android:textColor="@color/black"
-                        app:floatingLabelColor="#f2f2f2"
-                        app:image="@drawable/ic_send"
-                        app:imageColor="@color/black"
-                        app:textBoxColor="#DDDDDD" />
-    &ndash;&gt;
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="شما چه سوالی دارید؟"
-                android:textColorHint="@android:color/darker_gray"
-                android:background="@null"
-                />
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/viesws"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_gravity="center"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="30dp"
-                app:layout_constraintBottom_toBottomOf="@+id/expandableHintText3"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/expandableHintText3"
-                app:layout_constraintTop_toTopOf="@+id/expandableHintText3">
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:alpha="0.8"
-                    android:src="@drawable/nopicapp" />
-
-            </androidx.cardview.widget.CardView>
-        </LinearLayout>
-    -->
+        app:layout_constraintTop_toBottomOf="@+id/textView38" />
 
     <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:layout_margin="10dp"
-        android:background="#f2f2f2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/editText"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="10dp"
+        android:background="#F5F5F5"
+        app:layout_constraintEnd_toStartOf="@+id/imageVsiew666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        app:layout_constraintTop_toBottomOf="@+id/textView33">
 
-    <androidx.cardview.widget.CardView
-
-        android:id="@+id/viesws"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:layout_marginEnd="15dp"
-        app:cardCornerRadius="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toEndOf="@+id/relativeLayout"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout">
-
-        <ImageView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginStart="50dp"
             android:alpha="0.8"
-            android:src="@drawable/nopicapp" />
+            android:backgroundTint="@color/white"
+            android:hint="@string/a"
+            android:lines="1"
+            android:paddingStart="25dp"
+            android:paddingEnd="15dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/black"
+            android:textSize="15sp"
+            tools:ignore="RtlSymmetry" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/imageVsiew666"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:elevation="12dp"
+        app:cardCornerRadius="25dp"
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editText">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/userpic" />
 
     </androidx.cardview.widget.CardView>
 
-    <EditText
-        android:layout_marginBottom="30dp"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:id="@+id/editText"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginEnd="15dp"
-        android:background="@null"
-        android:hint="شما چه سوالی دارید؟"
-        android:importantForAutofill="no"
-        android:inputType="text"
-        android:textAlignment="textStart"
-        android:textColorHint="#5E5E5E"
-        android:textDirection="rtl"
-        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintEnd_toStartOf="@+id/viesws"
-        app:layout_constraintStart_toStartOf="@+id/relativeLayout"
-        app:layout_constraintTop_toTopOf="@+id/relativeLayout" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginStart="10dp"
         android:fontFamily="@font/iransans"
         android:text="ارسال"
         android:textColor="@color/blue_web"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintStart_toStartOf="@+id/relativeLayout" />
+        app:layout_constraintBottom_toBottomOf="@+id/editText"
+        app:layout_constraintStart_toStartOf="@+id/editText"
+        app:layout_constraintTop_toTopOf="@+id/editText" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
