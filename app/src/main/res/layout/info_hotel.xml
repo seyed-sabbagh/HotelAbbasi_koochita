@@ -126,10 +126,20 @@
         tools:ignore="MissingConstraints">
 
         <ImageView
+            android:id="@+id/ImgBookMark"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/ic_bookmark_xd" />
+            android:src="@drawable/ic_bookmark_xd"
+             />
+        <ImageView
+            android:visibility="invisible"
+            android:id="@+id/ImgBookMark2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_bookmark_xd"
+            app:tint="#FCC156" />
 
     </androidx.cardview.widget.CardView>
 

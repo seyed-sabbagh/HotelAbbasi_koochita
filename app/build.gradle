@@ -82,5 +82,8 @@ dependencies {
     implementation 'com.github.aniketbhoite:MutativeFab:1.0.8'
 
 
+    implementation 'com.github.ome450901:SimpleRatingBar:1.5.1'
+//https://github.com/williamyyu/SimpleRatingBar
+
 
 }
