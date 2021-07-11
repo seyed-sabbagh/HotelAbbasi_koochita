@@ -11,7 +11,7 @@
         android:id="@+id/shimmer_view_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:visibility="gone">
+        android:visibility="visible">
 
         <LinearLayout
             android:id="@+id/shimmer_layout_SliderTop"
@@ -61,7 +61,7 @@
                 android:layout_marginStart="5dp"
                 android:layout_marginTop="10dp"
                 android:elevation="12dp"
-                app:cardCornerRadius="25dp"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintStart_toEndOf="@+id/cardView"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -84,7 +84,7 @@
                 android:layout_height="40dp"
                 android:layout_marginEnd="5dp"
                 android:elevation="12dp"
-                app:cardCornerRadius="25dp"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintEnd_toStartOf="@+id/imageView6"
                 app:layout_constraintStart_toEndOf="@+id/cardView2"
                 app:layout_constraintTop_toTopOf="@+id/imageView6"
@@ -108,18 +108,17 @@
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="5dp"
                 android:elevation="12dp"
-                app:cardCornerRadius="25dp"
+                app:cardCornerRadius="20dp"
                 app:layout_constraintBottom_toBottomOf="@+id/cardView"
                 app:layout_constraintEnd_toStartOf="@+id/cardView"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/cardView">
 
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/backpack" />
+                    android:src="@drawable/ic_heart_xd" />
 
 
             </androidx.cardview.widget.CardView>

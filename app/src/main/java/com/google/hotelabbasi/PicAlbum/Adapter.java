@@ -21,9 +21,9 @@ import static com.google.hotelabbasi.PicAlbum.PicAlbumActivity.ImgAlbumMainA;
 
 public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
 
-    ListItem currentItem;
     private final Context mContext;
     private final ArrayList<ListItem> listItems;
+    ListItem currentItem;
 
     public Adapter(Context mContext, ArrayList<ListItem> listItems) {
         this.mContext = mContext;

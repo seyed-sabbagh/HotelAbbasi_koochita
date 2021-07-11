@@ -1,4 +1,4 @@
-package com.google.hotelabbasi;
+package com.google.hotelabbasi.slider.Restaurant;
 
 public class SliderModelResturan {
 

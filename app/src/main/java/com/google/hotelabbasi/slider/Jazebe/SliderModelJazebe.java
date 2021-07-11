@@ -1,4 +1,4 @@
-package com.google.hotelabbasi;
+package com.google.hotelabbasi.slider.Jazebe;
 
 public class SliderModelJazebe {
 

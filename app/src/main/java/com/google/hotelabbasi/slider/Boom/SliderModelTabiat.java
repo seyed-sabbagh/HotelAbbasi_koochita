@@ -1,6 +1,6 @@
-package com.google.hotelabbasi;
+package com.google.hotelabbasi.slider.Boom;
 
-public class SliderModelEghamat {
+public class SliderModelTabiat {
 
     public String title, location, imageUrl;
     public float starRating;

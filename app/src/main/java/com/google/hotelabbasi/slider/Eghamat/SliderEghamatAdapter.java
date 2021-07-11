@@ -1,6 +1,5 @@
-package com.google.hotelabbasi;
+package com.google.hotelabbasi.slider.Eghamat;
 
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,39 +9,36 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.hotelabbasi.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoomGardiNazdikAdapter.TravelLocationViewHolder> {
+public class SliderEghamatAdapter extends RecyclerView.Adapter<SliderEghamatAdapter.TravelLocationViewHolder> {
 
-    private final List<SliderModelTabiat> sliderModelTabiats;
+    private final List<SliderModelEghamat> sliderModelEghamats;
 
-    public SliderBoomGardiNazdikAdapter(List<SliderModelTabiat> sliderModelTabiats) {
-        this.sliderModelTabiats = sliderModelTabiats;
+    public SliderEghamatAdapter(List<SliderModelEghamat> sliderModelEghamats) {
+        this.sliderModelEghamats = sliderModelEghamats;
     }
-
 
     @NonNull
     @Override
     public TravelLocationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         return new TravelLocationViewHolder(
-                LayoutInflater.from(parent.getContext()).inflate(
-                        R.layout.item_container_location,
-                        parent,
-                        false
-                )
-        );
+                LayoutInflater.from(parent.getContext()).inflate(R.layout.item_container_location,
+                        parent, false));
     }
 
     @Override
     public void onBindViewHolder(@NonNull TravelLocationViewHolder holder, int position) {
-        holder.setLocationData(sliderModelTabiats.get(position));
+        holder.setLocationData(sliderModelEghamats.get(position));
+
     }
 
     @Override
     public int getItemCount() {
-        return sliderModelTabiats.size();
+        return sliderModelEghamats.size();
     }
 
     static class TravelLocationViewHolder extends RecyclerView.ViewHolder {
@@ -51,17 +47,19 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
         private final TextView txtTitle;
         private final TextView txtLocation;
 
-        TravelLocationViewHolder(@NonNull View itemView) {
+        public TravelLocationViewHolder(@NonNull View itemView) {
             super(itemView);
+
             kbvLocation = itemView.findViewById(R.id.kbvLocation);
             txtTitle = itemView.findViewById(R.id.txtTitle);
             txtLocation = itemView.findViewById(R.id.txtlocation);
         }
 
-        void setLocationData(SliderModelTabiat sliderModelTabiat) {
-            Picasso.get().load( sliderModelTabiat.imageUrl).into(kbvLocation);
+        void setLocationData(SliderModelEghamat sliderModelTabiat) {
+            Picasso.get().load(sliderModelTabiat.imageUrl).into(kbvLocation);
             txtTitle.setText(sliderModelTabiat.title);
             txtLocation.setText(sliderModelTabiat.location);
         }
     }
 }
+

@@ -1,4 +1,4 @@
-package com.google.hotelabbasi;
+package com.google.hotelabbasi.slider.Restaurant;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.hotelabbasi.R;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
