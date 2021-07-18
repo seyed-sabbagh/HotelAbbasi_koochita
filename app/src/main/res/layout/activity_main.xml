@@ -309,7 +309,8 @@
                 <TextView
                     android:id="@+id/TxtGetYPorseshVaPasokh"
                     android:layout_width="0dp"
-                    android:layout_height="0dp"/>
+                    android:layout_height="0dp" />
+
                 <include
                     layout="@layout/porsesh_va_pasokh_mainactivity"
                     android:layout_width="match_parent"
@@ -318,50 +319,7 @@
                     android:layout_margin="5dp"
                     android:layout_marginTop="20dp" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
-                    android:orientation="vertical"
-                    android:padding="15dp">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_gravity="end"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginEnd="5dp"
-                            android:fontFamily="@font/iransans"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="بوم گردی های نزدیک"
-                            android:textColor="@color/blue_web"
-                            android:textSize="17sp"
-                            android:textStyle="bold" />
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/ic_koochita" />
-
-                    </LinearLayout>
-
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/locationsviewPager"
-                        android:layout_width="match_parent"
-                        android:layout_height="185dp"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="40dp" />
-
-                </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -370,52 +328,7 @@
                     android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
                     android:orientation="vertical"
                     android:padding="15dp"
-                    android:visibility="gone">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_gravity="end"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginEnd="5dp"
-                            android:fontFamily="@font/iransans"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="جاذبه های نزدیک"
-                            android:textColor="@color/black"
-                            android:textSize="17sp"
-                            android:textStyle="bold" />
-
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/koochitalogo" />
-                    </LinearLayout>
-
-                    <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/locationsviewPager2"
-                        android:layout_width="match_parent"
-                        android:layout_height="185dp"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="40dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
-                    android:orientation="vertical"
-                    android:padding="15dp"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <LinearLayout
                         android:layout_width="wrap_content"
@@ -445,56 +358,12 @@
                     </LinearLayout>
 
                     <androidx.viewpager2.widget.ViewPager2
-                        android:id="@+id/locationsviewPager3"
-                        android:layout_width="match_parent"
-                        android:layout_height="185dp"
-                        android:paddingStart="20dp"
-                        android:paddingEnd="40dp" />
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@drawable/transparent_bg_bordered_bacgraond_activity"
-                    android:orientation="vertical"
-                    android:padding="15dp"
-                    android:visibility="gone">
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="35dp"
-                        android:layout_gravity="end"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="bottom"
-                            android:layout_marginEnd="5dp"
-                            android:fontFamily="@font/iransans"
-                            android:gravity="center"
-                            android:padding="5dp"
-                            android:text="اقامتگاه های نزدیک"
-                            android:textColor="@color/black"
-                            android:textSize="17sp"
-                            android:textStyle="bold" />
-
-                        <ImageView
-                            android:layout_width="70dp"
-                            android:layout_height="20dp"
-                            android:layout_gravity="center"
-                            android:scaleType="centerInside"
-                            android:src="@drawable/koochitalogo" />
-                    </LinearLayout>
-
-                    <androidx.viewpager2.widget.ViewPager2
                         android:id="@+id/locationsviewPager4"
                         android:layout_width="match_parent"
                         android:layout_height="185dp"
                         android:paddingStart="20dp"
-                        android:paddingEnd="40dp" />
+                        android:paddingEnd="60dp" />
+
                 </LinearLayout>
 
 

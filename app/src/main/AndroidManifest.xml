@@ -16,8 +16,11 @@
         android:testOnly="false"
         android:theme="@style/Theme.HotelAbbasi"
         android:usesCleartextTraffic="true">
-        <activity android:name=".PicAlbum.PicAlbumActivity"></activity>
+        <activity android:name=".PicAlbum.PicAlbumActivity">
+
+        </activity>
         <activity android:name=".MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -23,6 +23,7 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
     }
 
 
+
     @NonNull
     @Override
     public TravelLocationViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
