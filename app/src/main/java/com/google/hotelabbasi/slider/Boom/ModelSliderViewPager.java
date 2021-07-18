@@ -1,6 +1,6 @@
 package com.google.hotelabbasi.slider.Boom;
 
-public class SliderModelTabiat {
+public class ModelSliderViewPager {
 
     public String title, location, imageUrl;
     public float starRating;

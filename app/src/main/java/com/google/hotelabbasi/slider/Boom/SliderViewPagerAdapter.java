@@ -14,12 +14,12 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoomGardiNazdikAdapter.TravelLocationViewHolder> {
+public class SliderViewPagerAdapter extends RecyclerView.Adapter<SliderViewPagerAdapter.TravelLocationViewHolder> {
 
-    private final List<SliderModelTabiat> sliderModelTabiats;
+    private final List<ModelSliderViewPager> modelSliderViewPagers;
 
-    public SliderBoomGardiNazdikAdapter(List<SliderModelTabiat> sliderModelTabiats) {
-        this.sliderModelTabiats = sliderModelTabiats;
+    public SliderViewPagerAdapter(List<ModelSliderViewPager> modelSliderViewPagers) {
+        this.modelSliderViewPagers = modelSliderViewPagers;
     }
 
 
@@ -38,12 +38,12 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
 
     @Override
     public void onBindViewHolder(@NonNull TravelLocationViewHolder holder, int position) {
-        holder.setLocationData(sliderModelTabiats.get(position));
+        holder.setLocationData(modelSliderViewPagers.get(position));
     }
 
     @Override
     public int getItemCount() {
-        return sliderModelTabiats.size();
+        return modelSliderViewPagers.size();
     }
 
     static class TravelLocationViewHolder extends RecyclerView.ViewHolder {
@@ -59,10 +59,10 @@ public class SliderBoomGardiNazdikAdapter extends RecyclerView.Adapter<SliderBoo
             txtLocation = itemView.findViewById(R.id.txtlocation);
         }
 
-        void setLocationData(SliderModelTabiat sliderModelTabiat) {
-            Picasso.get().load( sliderModelTabiat.imageUrl).into(kbvLocation);
-            txtTitle.setText(sliderModelTabiat.title);
-            txtLocation.setText(sliderModelTabiat.location);
+        void setLocationData(ModelSliderViewPager modeladventureViewPager) {
+            Picasso.get().load( modeladventureViewPager.imageUrl).placeholder(R.drawable.loading_slider).error(R.drawable.loading_slider).into(kbvLocation);
+            txtTitle.setText(modeladventureViewPager.title);
+            txtLocation.setText(modeladventureViewPager.location);
         }
     }
 }
